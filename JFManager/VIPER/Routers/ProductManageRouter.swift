@@ -11,10 +11,10 @@ import UIKit
 
 class ProductManageRouter: ProductManageRouterProtocol {
 
-    private let navigationController: UINavigationController
+    private weak var navigationController: UINavigationController?
     private let genre: Genre
 
-    init(_ navigationController: UINavigationController, genre: Genre) {
+    init(_ navigationController: UINavigationController?, genre: Genre) {
         self.navigationController = navigationController
         self.genre = genre
     }
@@ -22,12 +22,12 @@ class ProductManageRouter: ProductManageRouterProtocol {
     func showDetail(about product: Product) {
         let viewController = ProductEditViewBuilder.buildDefault(genre: genre, product: product)
         viewController.modalPresentationStyle = .formSheet
-        navigationController.present(viewController, animated: true, completion: nil)
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
 
     func addProduct() {
         let viewController = ProductEditViewBuilder.buildDefault(genre: genre, product: nil)
         viewController.modalPresentationStyle = .formSheet
-        navigationController.present(viewController, animated: true, completion: nil)
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
 }

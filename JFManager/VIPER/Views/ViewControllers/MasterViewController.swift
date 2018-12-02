@@ -99,4 +99,14 @@ extension MasterViewController: UITableViewDataSource {
 
 extension MasterViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section != preseter.positions.value.count {
+            let position = preseter.positions.value[indexPath.section]
+            if let user = preseter.users.value[position]?[indexPath.row] {
+                preseter.show(user: user)
+            }
+        } else {
+            preseter.showSetting()
+        }
+    }
 }

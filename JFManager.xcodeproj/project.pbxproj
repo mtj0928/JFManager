@@ -14,6 +14,7 @@
 		9003F11621B3EB290009EEBD /* ProductEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9003F11521B3EB290009EEBD /* ProductEditInteractor.swift */; };
 		9003F11821B3EC290009EEBD /* ProductEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9003F11721B3EC290009EEBD /* ProductEditPresenter.swift */; };
 		9003F11A21B3EDF40009EEBD /* ProductEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9003F11921B3EDF40009EEBD /* ProductEditRouter.swift */; };
+		9003F11C21B410570009EEBD /* MasterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9003F11B21B410570009EEBD /* MasterRouter.swift */; };
 		900C83F921B1530B001073EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C83F821B1530B001073EB /* AppDelegate.swift */; };
 		900C840021B1530D001073EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900C83FF21B1530D001073EB /* Assets.xcassets */; };
 		900C840321B1530D001073EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C840121B1530D001073EB /* LaunchScreen.storyboard */; };
@@ -84,6 +85,7 @@
 		9003F11521B3EB290009EEBD /* ProductEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditInteractor.swift; sourceTree = "<group>"; };
 		9003F11721B3EC290009EEBD /* ProductEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditPresenter.swift; sourceTree = "<group>"; };
 		9003F11921B3EDF40009EEBD /* ProductEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditRouter.swift; sourceTree = "<group>"; };
+		9003F11B21B410570009EEBD /* MasterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterRouter.swift; sourceTree = "<group>"; };
 		900C83F521B1530B001073EB /* JFManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900C83F821B1530B001073EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		900C83FF21B1530D001073EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				9003F11921B3EDF40009EEBD /* ProductEditRouter.swift */,
+				9003F11B21B410570009EEBD /* MasterRouter.swift */,
 				90EDB4BF21B3BE3F004C15CC /* ProductManageRouter.swift */,
 				907BCA0421B27B9E002C3A85 /* SettingRouter.swift */,
 				90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */,
@@ -558,6 +561,7 @@
 				907BCA0B21B2D69E002C3A85 /* SettingPresenter.swift in Sources */,
 				90EDB4BA21B3BC3C004C15CC /* ProductManageViewController.swift in Sources */,
 				90EDB4A121B36FB8004C15CC /* UserEditViewController.swift in Sources */,
+				9003F11C21B410570009EEBD /* MasterRouter.swift in Sources */,
 				907BCA0321B27A3E002C3A85 /* SettingContract.swift in Sources */,
 				907BC9C121B22C85002C3A85 /* UIViewController+extension.swift in Sources */,
 				907BC99F21B228F3002C3A85 /* MasterViewController.swift in Sources */,

@@ -11,11 +11,11 @@ import UIKit
 
 class ProductManageViewBuilder {
 
-    static func buildDfault(genre: Genre, navigationController: UINavigationController) -> UIViewController {
+    static func buildDfault(genre: Genre, navigationController: UINavigationController?) -> UIViewController {
         let viewController = ProductManageViewController.createFromStoryboard()
         let dataStore = ProductLocalStore(LocalRealmRepository())
         let interactor = ProductManageInteractor(dataStore: dataStore, genre: genre)
-        let router = ProductManageRouter.init(navigationController, genre: genre)
+        let router = ProductManageRouter(navigationController, genre: genre)
         let presenter = ProductManagePresenter(genre: genre, interactor: interactor, router: router)
         viewController.presenter = presenter
         return viewController

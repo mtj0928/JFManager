@@ -11,7 +11,7 @@ import UIKit
 
 class SettingRouter: SettingRouterProtocol {
 
-    let navigationController: UINavigationController
+    weak var navigationController: UINavigationController?
 
     init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -19,11 +19,11 @@ class SettingRouter: SettingRouterProtocol {
 
     func presentUserManager() {
         let viewController = UserManagerBuilder.buildDefault()
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     func presentProductList(genre: Genre) {
         let viewController = ProductManageViewBuilder.buildDfault(genre: genre, navigationController: navigationController)
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

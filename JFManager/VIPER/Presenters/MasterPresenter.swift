@@ -19,13 +19,23 @@ class MasterPresenter: MasterPresenterProtocol {
     private(set) lazy var update = Observable.combineLatest(users, positions) { (_, _) in }
 
     private let interactor: MasterInteractorProtocol
+    private let router: MasterRouterProtocol
     private let disposeBag = DisposeBag()
 
-    init(interactor: MasterInteractorProtocol) {
+    init(interactor: MasterInteractorProtocol, router: MasterRouterProtocol) {
         self.interactor = interactor
+        self.router = router
 
         interactor.users.subscribe(onNext: { [weak self] users in
             self?.users.accept(Dictionary(grouping: users, by: { $0.position! }))
         }).disposed(by: disposeBag)
+    }
+
+    func show(user: User) {
+        router.show(user: user)
+    }
+
+    func showSetting() {
+        router.showSetting()
     }
 }

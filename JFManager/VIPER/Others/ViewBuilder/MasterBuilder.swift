@@ -11,11 +11,13 @@ import UIKit
 
 class MasterBuilder {
 
-    static func buildDefault() -> UIViewController {
+    static func buildDefault(_ splitViewController: UISplitViewController) -> UIViewController {
         let realmRepository = LocalRealmRepository()
         let userUseCase = UserUseCase(userStore: UserLocalStore(realmRepository), positionStore: PositionLocalStore(realmRepository))
         let interactor = MasterInteractor(userUseCase)
-        let presenter = MasterPresenter(interactor: interactor)
+        let router = MasterRouter(splitViewController)
+        let presenter = MasterPresenter(interactor: interactor, router: router)
+        
         let viewController = MasterViewController.createFromStoryboard()
         viewController.preseter = presenter
         return viewController

@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     private func setupWindow() {
-        let masterViewController = MasterBuilder.buildDefault()
         let splitViewController = UISplitViewController()
+        let masterViewController = MasterBuilder.buildDefault(splitViewController)
         let navigtionController = UINavigationController()
         navigtionController.viewControllers = [SettingBuilder.defaultBuilde(navigtionController)]
 

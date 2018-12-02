@@ -18,6 +18,15 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
+        setUpNavigationBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
 
@@ -29,6 +38,10 @@ extension SettingViewController {
     private func setUpTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    private func setUpNavigationBar() {
+        navigationItem.title = "設定"
     }
 }
 
