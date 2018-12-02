@@ -35,6 +35,8 @@ extension UserManageViewController {
     private func setUpTableView() {
         tableView.dataSource = self
 
+        tableView.registerCell(identifier: UserShortCell.identifier)
+
         presenter.update.asDriver(onErrorDriveWith: Driver.empty()).drive(onNext: { [weak self] in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
@@ -69,10 +71,11 @@ extension UserManageViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserShortCell.identifier, for: indexPath) as! UserShortCell
         let position = presenter.positions.value[indexPath.section]
-        let user = presenter.users.value[position]?[indexPath.row]
-        cell.textLabel?.text = user?.name
+        if let user = presenter.users.value[position]?[indexPath.row] {
+            cell.set(user)
+        }
         return cell
     }
 }

@@ -52,6 +52,8 @@
 		90EDB4AB21B37EFC004C15CC /* UserEditViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AA21B37EFC004C15CC /* UserEditViewBuilder.swift */; };
 		90EDB4AD21B37FDD004C15CC /* UserEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */; };
 		90EDB4AF21B3816E004C15CC /* UserManageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AE21B3816E004C15CC /* UserManageRouter.swift */; };
+		90EDB4B221B3AFC7004C15CC /* UserShortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4B121B3AFC6004C15CC /* UserShortCell.swift */; };
+		90EDB4B421B3AFDF004C15CC /* UserShortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EDB4B321B3AFDF004C15CC /* UserShortCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		90EDB4AA21B37EFC004C15CC /* UserEditViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewBuilder.swift; sourceTree = "<group>"; };
 		90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditRouter.swift; sourceTree = "<group>"; };
 		90EDB4AE21B3816E004C15CC /* UserManageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageRouter.swift; sourceTree = "<group>"; };
+		90EDB4B121B3AFC6004C15CC /* UserShortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShortCell.swift; sourceTree = "<group>"; };
+		90EDB4B321B3AFDF004C15CC /* UserShortCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserShortCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		907BC9C221B22F37002C3A85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90EDB4B021B3AFB5004C15CC /* Components */,
 				907BC9C521B22FD0002C3A85 /* ViewControllers */,
 			);
 			path = Views;
@@ -316,6 +321,15 @@
 			path = UserCase;
 			sourceTree = "<group>";
 		};
+		90EDB4B021B3AFB5004C15CC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				90EDB4B121B3AFC6004C15CC /* UserShortCell.swift */,
+				90EDB4B321B3AFDF004C15CC /* UserShortCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EDB4B421B3AFDF004C15CC /* UserShortCell.xib in Resources */,
 				90EDB4A321B36FC9004C15CC /* UserEditViewController.storyboard in Resources */,
 				907BC9F821B2727A002C3A85 /* SettingViewController.storyboard in Resources */,
 				900C840321B1530D001073EB /* LaunchScreen.storyboard in Resources */,
@@ -416,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				907BC9CD21B237C9002C3A85 /* User.swift in Sources */,
+				90EDB4B221B3AFC7004C15CC /* UserShortCell.swift in Sources */,
 				907BC9E421B25BCC002C3A85 /* MasterContract.swift in Sources */,
 				907BC9FA21B272E7002C3A85 /* UserManageContract.swift in Sources */,
 				90EDB4A521B375A7004C15CC /* UserEditCotracts.swift in Sources */,

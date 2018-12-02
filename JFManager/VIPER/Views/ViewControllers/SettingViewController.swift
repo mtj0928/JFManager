@@ -13,7 +13,7 @@ class SettingViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     var presenter: SettingPresenterProtocol!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

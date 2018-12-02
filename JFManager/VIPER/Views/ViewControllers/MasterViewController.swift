@@ -27,13 +27,17 @@ final class MasterViewController: UIViewController {
 }
 
 
-// MARK: Set Up
+// MARK: - Set Up
 
 extension MasterViewController {
 
     private func setUpTableView() {
-        tableView.dataSource = self
+        tableView.registerCell(identifier: UserShortCell.identifier)
 
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        tableView.rowHeight = UITableView.automaticDimension
         preseter.update.asDriver(onErrorDriveWith: Driver.empty()).drive(onNext: { [weak self] in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
@@ -41,7 +45,7 @@ extension MasterViewController {
 }
 
 
-// MARK: UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension MasterViewController: UITableViewDataSource {
 
@@ -76,10 +80,10 @@ extension MasterViewController: UITableViewDataSource {
     }
 
     private func userCell(_ indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserShortCell.identifier, for: indexPath) as! UserShortCell
         let position = preseter.positions.value[indexPath.section]
         let user = preseter.users.value[position]![indexPath.row]
-        cell.textLabel?.text = user.name
+        cell.set(user)
         return cell
     }
 
@@ -88,4 +92,11 @@ extension MasterViewController: UITableViewDataSource {
         cell.textLabel?.text = "設定"
         return cell
     }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension MasterViewController: UITableViewDelegate {
+
 }
