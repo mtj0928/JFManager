@@ -24,11 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     private func setupWindow() {
-        let masterViewController = MasterViewController.createFromStoryboard()
+        let masterViewController = MasterBuilder.buildDefault()
         let splitViewController = UISplitViewController()
-        let viewController = UIViewController()
+        let navigtionController = UINavigationController()
+        navigtionController.viewControllers = [SettingBuilder.defaultBuilde(navigtionController)]
 
-        splitViewController.viewControllers = [masterViewController, viewController]
+        splitViewController.viewControllers = [masterViewController, navigtionController]
         splitViewController.preferredDisplayMode = .allVisible
 
         window =  UIWindow(frame: UIScreen.main.bounds)

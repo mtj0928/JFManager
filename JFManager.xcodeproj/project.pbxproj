@@ -17,6 +17,41 @@
 		907BC99F21B228F3002C3A85 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC99E21B228F3002C3A85 /* MasterViewController.swift */; };
 		907BC9C121B22C85002C3A85 /* UIViewController+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9C021B22C85002C3A85 /* UIViewController+extention.swift */; };
 		907BC9C721B22FF5002C3A85 /* MasterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907BC9C621B22FF5002C3A85 /* MasterViewController.storyboard */; };
+		907BC9CD21B237C9002C3A85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9CC21B237C9002C3A85 /* User.swift */; };
+		907BC9CF21B23816002C3A85 /* IdTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9CE21B23816002C3A85 /* IdTable.swift */; };
+		907BC9D121B23D15002C3A85 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9D021B23D15002C3A85 /* Position.swift */; };
+		907BC9D721B2508F002C3A85 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9D621B2508F002C3A85 /* UserStore.swift */; };
+		907BC9D921B2511D002C3A85 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9D821B2511D002C3A85 /* RealmRepository.swift */; };
+		907BC9DC21B25235002C3A85 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9DB21B25235002C3A85 /* DataStore.swift */; };
+		907BC9E421B25BCC002C3A85 /* MasterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9E321B25BCC002C3A85 /* MasterContract.swift */; };
+		907BC9E821B25F24002C3A85 /* MasterBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9E721B25F24002C3A85 /* MasterBuilder.swift */; };
+		907BC9EA21B260B9002C3A85 /* UITableView+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9E921B260B9002C3A85 /* UITableView+extention.swift */; };
+		907BC9EC21B260EB002C3A85 /* NSObject+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9EB21B260EB002C3A85 /* NSObject+extention.swift */; };
+		907BC9EE21B26110002C3A85 /* UITableViewCell+extetion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9ED21B26110002C3A85 /* UITableViewCell+extetion.swift */; };
+		907BC9F021B26231002C3A85 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9EF21B26231002C3A85 /* MasterPresenter.swift */; };
+		907BC9F221B26B21002C3A85 /* MasterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9F121B26B21002C3A85 /* MasterInteractor.swift */; };
+		907BC9F421B26C1D002C3A85 /* PositionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9F321B26C1D002C3A85 /* PositionStore.swift */; };
+		907BC9F621B27267002C3A85 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9F521B27267002C3A85 /* SettingViewController.swift */; };
+		907BC9F821B2727A002C3A85 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907BC9F721B2727A002C3A85 /* SettingViewController.storyboard */; };
+		907BC9FA21B272E7002C3A85 /* UserManageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9F921B272E7002C3A85 /* UserManageContract.swift */; };
+		907BC9FD21B2732D002C3A85 /* UserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BC9FC21B2732D002C3A85 /* UserUseCase.swift */; };
+		907BCA0121B277AA002C3A85 /* UserManageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0021B277AA002C3A85 /* UserManageInteractor.swift */; };
+		907BCA0321B27A3E002C3A85 /* SettingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0221B27A3E002C3A85 /* SettingContract.swift */; };
+		907BCA0521B27B9E002C3A85 /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0421B27B9E002C3A85 /* SettingRouter.swift */; };
+		907BCA0721B27C06002C3A85 /* UserManagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0621B27C06002C3A85 /* UserManagerBuilder.swift */; };
+		907BCA0921B2D5E1002C3A85 /* SettingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0821B2D5E1002C3A85 /* SettingBuilder.swift */; };
+		907BCA0B21B2D69E002C3A85 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0A21B2D69E002C3A85 /* SettingPresenter.swift */; };
+		907BCA0D21B2D9A7002C3A85 /* UserManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0C21B2D9A7002C3A85 /* UserManageViewController.swift */; };
+		907BCA0F21B2D9B6002C3A85 /* UserManageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907BCA0E21B2D9B6002C3A85 /* UserManageViewController.storyboard */; };
+		90EDB49D21B2DEA9004C15CC /* UserManagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */; };
+		90EDB4A121B36FB8004C15CC /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */; };
+		90EDB4A321B36FC9004C15CC /* UserEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */; };
+		90EDB4A521B375A7004C15CC /* UserEditCotracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A421B375A7004C15CC /* UserEditCotracts.swift */; };
+		90EDB4A721B3771C004C15CC /* UserEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A621B3771C004C15CC /* UserEditPresenter.swift */; };
+		90EDB4A921B379E5004C15CC /* UserEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A821B379E5004C15CC /* UserEditInteractor.swift */; };
+		90EDB4AB21B37EFC004C15CC /* UserEditViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AA21B37EFC004C15CC /* UserEditViewBuilder.swift */; };
+		90EDB4AD21B37FDD004C15CC /* UserEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */; };
+		90EDB4AF21B3816E004C15CC /* UserManageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4AE21B3816E004C15CC /* UserManageRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +67,41 @@
 		907BC99E21B228F3002C3A85 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		907BC9C021B22C85002C3A85 /* UIViewController+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extention.swift"; sourceTree = "<group>"; };
 		907BC9C621B22FF5002C3A85 /* MasterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MasterViewController.storyboard; sourceTree = "<group>"; };
+		907BC9CC21B237C9002C3A85 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		907BC9CE21B23816002C3A85 /* IdTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTable.swift; sourceTree = "<group>"; };
+		907BC9D021B23D15002C3A85 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		907BC9D621B2508F002C3A85 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		907BC9D821B2511D002C3A85 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		907BC9DB21B25235002C3A85 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		907BC9E321B25BCC002C3A85 /* MasterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterContract.swift; sourceTree = "<group>"; };
+		907BC9E721B25F24002C3A85 /* MasterBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterBuilder.swift; sourceTree = "<group>"; };
+		907BC9E921B260B9002C3A85 /* UITableView+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extention.swift"; sourceTree = "<group>"; };
+		907BC9EB21B260EB002C3A85 /* NSObject+extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+extention.swift"; sourceTree = "<group>"; };
+		907BC9ED21B26110002C3A85 /* UITableViewCell+extetion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extetion.swift"; sourceTree = "<group>"; };
+		907BC9EF21B26231002C3A85 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
+		907BC9F121B26B21002C3A85 /* MasterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterInteractor.swift; sourceTree = "<group>"; };
+		907BC9F321B26C1D002C3A85 /* PositionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionStore.swift; sourceTree = "<group>"; };
+		907BC9F521B27267002C3A85 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		907BC9F721B2727A002C3A85 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
+		907BC9F921B272E7002C3A85 /* UserManageContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageContract.swift; sourceTree = "<group>"; };
+		907BC9FC21B2732D002C3A85 /* UserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUseCase.swift; sourceTree = "<group>"; };
+		907BCA0021B277AA002C3A85 /* UserManageInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManageInteractor.swift; sourceTree = "<group>"; };
+		907BCA0221B27A3E002C3A85 /* SettingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContract.swift; sourceTree = "<group>"; };
+		907BCA0421B27B9E002C3A85 /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
+		907BCA0621B27C06002C3A85 /* UserManagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerBuilder.swift; sourceTree = "<group>"; };
+		907BCA0821B2D5E1002C3A85 /* SettingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBuilder.swift; sourceTree = "<group>"; };
+		907BCA0A21B2D69E002C3A85 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		907BCA0C21B2D9A7002C3A85 /* UserManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageViewController.swift; sourceTree = "<group>"; };
+		907BCA0E21B2D9B6002C3A85 /* UserManageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserManageViewController.storyboard; sourceTree = "<group>"; };
+		90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagePresenter.swift; sourceTree = "<group>"; };
+		90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEditViewController.storyboard; sourceTree = "<group>"; };
+		90EDB4A421B375A7004C15CC /* UserEditCotracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditCotracts.swift; sourceTree = "<group>"; };
+		90EDB4A621B3771C004C15CC /* UserEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditPresenter.swift; sourceTree = "<group>"; };
+		90EDB4A821B379E5004C15CC /* UserEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditInteractor.swift; sourceTree = "<group>"; };
+		90EDB4AA21B37EFC004C15CC /* UserEditViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewBuilder.swift; sourceTree = "<group>"; };
+		90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditRouter.swift; sourceTree = "<group>"; };
+		90EDB4AE21B3816E004C15CC /* UserManageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				900C83F821B1530B001073EB /* AppDelegate.swift */,
+				907BC9E121B25B7F002C3A85 /* VIPER */,
 				907BC9C321B22F4B002C3A85 /* Common */,
-				907BC9C221B22F37002C3A85 /* Views */,
 				900C83FF21B1530D001073EB /* Assets.xcassets */,
 				900C840121B1530D001073EB /* LaunchScreen.storyboard */,
 				900C840421B1530D001073EB /* Info.plist */,
@@ -93,7 +163,7 @@
 		907BC9C221B22F37002C3A85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				907BC9C521B22FD0002C3A85 /* VieControllers */,
+				907BC9C521B22FD0002C3A85 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,17 +180,140 @@
 			isa = PBXGroup;
 			children = (
 				907BC9C021B22C85002C3A85 /* UIViewController+extention.swift */,
+				907BC9EB21B260EB002C3A85 /* NSObject+extention.swift */,
+				907BC9ED21B26110002C3A85 /* UITableViewCell+extetion.swift */,
+				907BC9E921B260B9002C3A85 /* UITableView+extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		907BC9C521B22FD0002C3A85 /* VieControllers */ = {
+		907BC9C521B22FD0002C3A85 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				907BC99E21B228F3002C3A85 /* MasterViewController.swift */,
 				907BC9C621B22FF5002C3A85 /* MasterViewController.storyboard */,
+				907BC99E21B228F3002C3A85 /* MasterViewController.swift */,
+				907BC9F721B2727A002C3A85 /* SettingViewController.storyboard */,
+				907BC9F521B27267002C3A85 /* SettingViewController.swift */,
+				90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */,
+				90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */,
+				907BCA0E21B2D9B6002C3A85 /* UserManageViewController.storyboard */,
+				907BCA0C21B2D9A7002C3A85 /* UserManageViewController.swift */,
 			);
-			path = VieControllers;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		907BC9C821B2373E002C3A85 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9F121B26B21002C3A85 /* MasterInteractor.swift */,
+				90EDB4A821B379E5004C15CC /* UserEditInteractor.swift */,
+				907BCA0021B277AA002C3A85 /* UserManageInteractor.swift */,
+				907BC9FB21B2731D002C3A85 /* UserCase */,
+				907BC9D521B25002002C3A85 /* DataStores */,
+				907BC9DA21B251FB002C3A85 /* Utils */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		907BC9C921B23749002C3A85 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9EF21B26231002C3A85 /* MasterPresenter.swift */,
+				907BCA0A21B2D69E002C3A85 /* SettingPresenter.swift */,
+				90EDB4A621B3771C004C15CC /* UserEditPresenter.swift */,
+				90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		907BC9CA21B23754002C3A85 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				907BCA0421B27B9E002C3A85 /* SettingRouter.swift */,
+				90EDB4AC21B37FDD004C15CC /* UserEditRouter.swift */,
+				90EDB4AE21B3816E004C15CC /* UserManageRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		907BC9CB21B23784002C3A85 /* Enities */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9CE21B23816002C3A85 /* IdTable.swift */,
+				907BC9D021B23D15002C3A85 /* Position.swift */,
+				907BC9CC21B237C9002C3A85 /* User.swift */,
+			);
+			path = Enities;
+			sourceTree = "<group>";
+		};
+		907BC9D521B25002002C3A85 /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9DB21B25235002C3A85 /* DataStore.swift */,
+				907BC9F321B26C1D002C3A85 /* PositionStore.swift */,
+				907BC9D621B2508F002C3A85 /* UserStore.swift */,
+			);
+			path = DataStores;
+			sourceTree = "<group>";
+		};
+		907BC9DA21B251FB002C3A85 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9D821B2511D002C3A85 /* RealmRepository.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		907BC9E121B25B7F002C3A85 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9C221B22F37002C3A85 /* Views */,
+				907BC9C821B2373E002C3A85 /* Interactors */,
+				907BC9C921B23749002C3A85 /* Presenters */,
+				907BC9CB21B23784002C3A85 /* Enities */,
+				907BC9CA21B23754002C3A85 /* Routers */,
+				907BC9E221B25BA8002C3A85 /* Others */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		907BC9E221B25BA8002C3A85 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9E621B25F13002C3A85 /* ViewBuilder */,
+				907BC9E521B25F0A002C3A85 /* Contracts */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		907BC9E521B25F0A002C3A85 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9E321B25BCC002C3A85 /* MasterContract.swift */,
+				907BCA0221B27A3E002C3A85 /* SettingContract.swift */,
+				90EDB4A421B375A7004C15CC /* UserEditCotracts.swift */,
+				907BC9F921B272E7002C3A85 /* UserManageContract.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		907BC9E621B25F13002C3A85 /* ViewBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9E721B25F24002C3A85 /* MasterBuilder.swift */,
+				907BCA0821B2D5E1002C3A85 /* SettingBuilder.swift */,
+				90EDB4AA21B37EFC004C15CC /* UserEditViewBuilder.swift */,
+				907BCA0621B27C06002C3A85 /* UserManagerBuilder.swift */,
+			);
+			path = ViewBuilder;
+			sourceTree = "<group>";
+		};
+		907BC9FB21B2731D002C3A85 /* UserCase */ = {
+			isa = PBXGroup;
+			children = (
+				907BC9FC21B2732D002C3A85 /* UserUseCase.swift */,
+			);
+			path = UserCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +375,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EDB4A321B36FC9004C15CC /* UserEditViewController.storyboard in Resources */,
+				907BC9F821B2727A002C3A85 /* SettingViewController.storyboard in Resources */,
 				900C840321B1530D001073EB /* LaunchScreen.storyboard in Resources */,
+				907BCA0F21B2D9B6002C3A85 /* UserManageViewController.storyboard in Resources */,
 				900C840021B1530D001073EB /* Assets.xcassets in Resources */,
 				907BC9C721B22FF5002C3A85 /* MasterViewController.storyboard in Resources */,
 			);
@@ -210,7 +406,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -219,9 +415,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907BC9CD21B237C9002C3A85 /* User.swift in Sources */,
+				907BC9E421B25BCC002C3A85 /* MasterContract.swift in Sources */,
+				907BC9FA21B272E7002C3A85 /* UserManageContract.swift in Sources */,
+				90EDB4A521B375A7004C15CC /* UserEditCotracts.swift in Sources */,
 				900C83F921B1530B001073EB /* AppDelegate.swift in Sources */,
+				907BCA0721B27C06002C3A85 /* UserManagerBuilder.swift in Sources */,
+				907BC9D121B23D15002C3A85 /* Position.swift in Sources */,
+				907BC9EC21B260EB002C3A85 /* NSObject+extention.swift in Sources */,
+				90EDB4A721B3771C004C15CC /* UserEditPresenter.swift in Sources */,
+				907BC9F621B27267002C3A85 /* SettingViewController.swift in Sources */,
+				90EDB49D21B2DEA9004C15CC /* UserManagePresenter.swift in Sources */,
+				907BC9EA21B260B9002C3A85 /* UITableView+extention.swift in Sources */,
+				907BC9F021B26231002C3A85 /* MasterPresenter.swift in Sources */,
+				907BCA0921B2D5E1002C3A85 /* SettingBuilder.swift in Sources */,
+				907BC9D721B2508F002C3A85 /* UserStore.swift in Sources */,
+				90EDB4AD21B37FDD004C15CC /* UserEditRouter.swift in Sources */,
+				907BC9F221B26B21002C3A85 /* MasterInteractor.swift in Sources */,
+				907BCA0D21B2D9A7002C3A85 /* UserManageViewController.swift in Sources */,
+				907BC9EE21B26110002C3A85 /* UITableViewCell+extetion.swift in Sources */,
+				907BC9CF21B23816002C3A85 /* IdTable.swift in Sources */,
+				90EDB4AB21B37EFC004C15CC /* UserEditViewBuilder.swift in Sources */,
+				90EDB4A921B379E5004C15CC /* UserEditInteractor.swift in Sources */,
+				907BC9D921B2511D002C3A85 /* RealmRepository.swift in Sources */,
+				907BCA0121B277AA002C3A85 /* UserManageInteractor.swift in Sources */,
+				907BCA0521B27B9E002C3A85 /* SettingRouter.swift in Sources */,
+				907BC9F421B26C1D002C3A85 /* PositionStore.swift in Sources */,
+				90EDB4AF21B3816E004C15CC /* UserManageRouter.swift in Sources */,
+				907BC9E821B25F24002C3A85 /* MasterBuilder.swift in Sources */,
+				907BC9FD21B2732D002C3A85 /* UserUseCase.swift in Sources */,
+				907BCA0B21B2D69E002C3A85 /* SettingPresenter.swift in Sources */,
+				90EDB4A121B36FB8004C15CC /* UserEditViewController.swift in Sources */,
+				907BCA0321B27A3E002C3A85 /* SettingContract.swift in Sources */,
 				907BC9C121B22C85002C3A85 /* UIViewController+extention.swift in Sources */,
 				907BC99F21B228F3002C3A85 /* MasterViewController.swift in Sources */,
+				907BC9DC21B25235002C3A85 /* DataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KusumotoLab.JFManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -395,7 +623,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KusumotoLab.JFManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
