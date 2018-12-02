@@ -1,5 +1,5 @@
 //
-//  UITableView+extention.swift
+//  UITableView+extension.swift
 //  JFManager
 //
 //  Created by 松本淳之介 on 2018/12/01.

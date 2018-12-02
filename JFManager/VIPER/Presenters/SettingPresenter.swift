@@ -19,4 +19,8 @@ class SettingPresenter: SettingPresenterProtocol {
     func tapUserManagerCell() {
         router.presentUserManager()
     }
+
+    func tapProductListCell(genre: Genre) {
+        router.presentProductList(genre: genre)
+    }
 }

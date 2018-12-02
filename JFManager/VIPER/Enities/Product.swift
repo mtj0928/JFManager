@@ -1,41 +1,55 @@
 //
-//  User.swift
+//  Product.swift
 //  JFManager
 //
-//  Created by 松本淳之介 on 2018/12/01.
+//  Created by 松本淳之介 on 2018/12/02.
 //  Copyright © 2018 Kusumoto Lab. All rights reserved.
 //
 
 import Foundation
-import Realm
 import RealmSwift
 import UIKit
 
-class User: Object {
+enum Genre: String {
+    case food, drink
+}
+
+class Product: Object {
+
     @objc dynamic var id = 0
-    @objc dynamic var name = "Kusumoto Lab"
-    @objc dynamic var position: Position!
+    @objc dynamic var name = ""
+    @objc dynamic var price = 0
     @objc dynamic var isActive = true
+    @objc dynamic private var _genre = "food"
+    var genre: Genre {
+        get {
+            return Genre(rawValue: _genre)!
+        }
+        set {
+            _genre = newValue.rawValue
+        }
+    }
+    @objc dynamic private var imageData: Data?
+    private var imageCache: UIImage?
     var image: UIImage? {
         set { setImage(value: newValue) }
         get { return getImage() }
     }
 
-    private var imageCache: UIImage?
-    @objc dynamic private var imageData: Data?
 
     override class func primaryKey() -> String? {
         return "id"
     }
 
     override class func ignoredProperties() -> [String] {
-        return ["image", "imageCache"]
+        return ["genre", "image", "imageCache"]
     }
 }
 
+
 // MARK: - Cache Logic
 
-extension User {
+extension Product {
 
     private func setImage(value: UIImage?) {
         imageCache = value

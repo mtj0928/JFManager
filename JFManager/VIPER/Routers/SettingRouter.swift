@@ -21,4 +21,9 @@ class SettingRouter: SettingRouterProtocol {
         let viewController = UserManagerBuilder.buildDefault()
         navigationController.pushViewController(viewController, animated: true)
     }
+
+    func presentProductList(genre: Genre) {
+        let viewController = ProductManageViewBuilder.buildDfault(genre: genre, navigationController: navigationController)
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

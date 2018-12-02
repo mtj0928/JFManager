@@ -12,8 +12,10 @@ import RxCocoa
 
 protocol SettingPresenterProtocol {
     func tapUserManagerCell()
+    func tapProductListCell(genre: Genre)
 }
 
 protocol SettingRouterProtocol {
     func presentUserManager()
+    func presentProductList(genre: Genre)
 }
