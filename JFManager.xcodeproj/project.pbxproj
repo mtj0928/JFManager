@@ -461,11 +461,11 @@
 		90EDB4C721B3C3CF004C15CC /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				9003F13321B436530009EEBD /* ProductsTableViewCell.swift */,
 				9077C41F21B4C77A003EEB03 /* HeaderTableViewCell.swift */,
+				9077C42121B4C790003EEB03 /* HeaderTableViewCell.xib */,
 				9077C42321B4C965003EEB03 /* HistoryTableViewCell.swift */,
 				9077C42521B4C978003EEB03 /* HistoryTableViewCell.xib */,
-				9077C42121B4C790003EEB03 /* HeaderTableViewCell.xib */,
+				9003F13321B436530009EEBD /* ProductsTableViewCell.swift */,
 				9003F13521B4366B0009EEBD /* ProductsTableViewCell.xib */,
 				9003F12321B41A2B0009EEBD /* UserProfileTableViewCell.swift */,
 				9003F12521B41A340009EEBD /* UserProfileTableViewCell.xib */,

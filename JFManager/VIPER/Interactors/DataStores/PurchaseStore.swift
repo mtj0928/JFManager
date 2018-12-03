@@ -11,7 +11,7 @@ import RealmSwift
 
 protocol PurchaseStore {
     func create(_ product: Product, by user: User) -> Purchase
-    func cancel(_ purchase: Purchase)
+    func toggle(_ purchase: Purchase)
     func fetch() -> Results<Purchase> 
 }
 
@@ -31,11 +31,11 @@ class PurchaseLocalStore: LocalDataStore, PurchaseStore {
         return purchase
     }
 
-    func cancel(_ purchase: Purchase) {
+    func toggle(_ purchase: Purchase) {
         let realm = repository.build()
         try! realm.write {
-            purchase.isCanceld = true
-            purchase.user.first?.nowPrice -= purchase.product.price
+            purchase.user.first?.nowPrice += purchase.isCanceld ? purchase.product.price : -purchase.product.price
+            purchase.isCanceld = !purchase.isCanceld
         }
     }
 

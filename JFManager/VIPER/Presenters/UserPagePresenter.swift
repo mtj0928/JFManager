@@ -33,4 +33,8 @@ class UserPagePresenter: UserPagePresenterProtocol {
     func tapProduct(_ product: Product) {
         router.showConfirm(user: user.value, product: product)
     }
+
+    func toggle(_ purchase: Purchase) {
+        interactor.toggle(purchase)
+    }
 }

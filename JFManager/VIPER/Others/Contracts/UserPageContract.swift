@@ -17,6 +17,7 @@ protocol UserPagePresenterProtocol {
     var history: BehaviorRelay<[Purchase]> { get }
 
     func tapProduct(_ product: Product)
+    func toggle(_ purchase: Purchase)
 }
 
 protocol UserPageInteractorProtocol {
@@ -24,6 +25,7 @@ protocol UserPageInteractorProtocol {
     var products: BehaviorRelay<[Genre : [Product]]> { get }
     var history: BehaviorRelay<[Purchase]> { get }
     func buy(_ product: Product)
+    func toggle(_ purchase: Purchase)
 }
 
 protocol UserPageRouterProtocol {

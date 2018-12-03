@@ -60,10 +60,15 @@ class UserPageInteractor: UserPageInteractorProtocol {
     private func getArray(genre: Genre) -> [Product] {
         return productStore.fetch(genre: genre)
             .filter("isActive == %@", true)
+            .sorted(byKeyPath: "price", ascending: false)
             .map({ $0 })
     }
 
     func buy(_ product: Product) {
         _ = purchaseStore.create(product, by: user.value)
+    }
+
+    func toggle(_ purchase: Purchase) {
+        purchaseStore.toggle(purchase)
     }
 }

@@ -49,7 +49,7 @@ extension UserPageViewController {
         tableView.registerCell(identifier: HistoryTableViewCell.identifier)
 
         preseter.history.asDriver().drive(onNext: { [weak self] _ in
-            self?.tableView.reloadSections(IndexSet.init(integer: 3), with: .none)
+            self?.tableView.reloadSections(IndexSet.init(integer: 3), with: .automatic)
         }).disposed(by: disposeBag)
     }
 }
@@ -105,4 +105,16 @@ extension UserPageViewController: UITableViewDataSource {
  
 extension UserPageViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard indexPath.section == 3 && indexPath.row != 0 else {
+            return nil
+        }
+        let action = UIContextualAction(style: .destructive, title: "取り消し") { [weak self] (action, view, completionHandler) in
+            guard let purchase = self?.preseter.history.value[indexPath.row - 1] else { return }
+            self?.preseter.toggle(purchase)
+            completionHandler(true)
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        return configuration
+    }
 }

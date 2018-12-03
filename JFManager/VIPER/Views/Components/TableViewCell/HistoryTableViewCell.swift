@@ -15,12 +15,17 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var overlayView: UIView!
+    @IBOutlet private weak var cancelbar: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         productImageView.layer.masksToBounds = true
         productImageView.layer.cornerRadius = 5.0
+
+        cancelbar.layer.masksToBounds = true
+        cancelbar.layer.cornerRadius = 3.0
     }
     
     func set(_ purchase: Purchase) {
@@ -33,5 +38,7 @@ class HistoryTableViewCell: UITableViewCell {
         formatter.dateStyle = .short
         formatter.locale = Locale(identifier: "ja_JP")
         dateLabel.text = formatter.string(from: purchase.date)
+
+        overlayView.isHidden = !purchase.isCanceld
     }
 }

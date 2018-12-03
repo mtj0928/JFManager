@@ -24,9 +24,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 
     func set(_ product: Product) {
         let image = product.image
-        DispatchQueue.main.async { [weak self] in
-            self?.productImageView.image = image
-        }
+        productImageView.image = image
         productNameLabel.text = product.name
         priceLabel.text = "\(product.price) 円"
     }
