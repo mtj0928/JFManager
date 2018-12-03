@@ -22,7 +22,7 @@ class PurchaseLocalStore: LocalDataStore, PurchaseStore {
         let table = fetchTable()
         let purchase = Purchase()
         try! realm.write {
-            purchase.id = table.productId
+            purchase.id = table.purchaseId
             purchase.product = product
             user.history.append(purchase)
             user.nowPrice += product.price

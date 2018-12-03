@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UserPageViewController: UIViewController {
 
@@ -15,10 +17,17 @@ class UserPageViewController: UIViewController {
 
     var preseter: UserPagePresenterProtocol!
 
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpTableView()
+    }
+
+    func set(_ user: User) {
+        preseter.user.accept(user)
+        tableView?.reloadData()
     }
 }
 
@@ -36,6 +45,12 @@ extension UserPageViewController {
 
         tableView.registerCell(identifier: UserProfileTableViewCell.identifier)
         tableView.registerCell(identifier: ProductsTableViewCell.identifier)
+        tableView.registerCell(identifier: HeaderTableViewCell.identifier)
+        tableView.registerCell(identifier: HistoryTableViewCell.identifier)
+
+        preseter.history.asDriver().drive(onNext: { [weak self] _ in
+            self?.tableView.reloadSections(IndexSet.init(integer: 3), with: .none)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -45,32 +60,48 @@ extension UserPageViewController {
 extension UserPageViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 3 {
+            let history = preseter.history.value
+            return history.isEmpty ? 0 : history.count + 1
+        }
         return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: UserProfileTableViewCell.identifier, for: indexPath) as! UserProfileTableViewCell
-            let user = preseter.user.value
-            cell.set(user)
+            cell.set(preseter.user.value)
             return cell
         } else if indexPath.section == 1 || indexPath.section == 2 {
             let genre: Genre = indexPath.section == 1 ? .drink : .food
             let products = preseter.products.value[genre] ?? []
             let cell = tableView.dequeueReusableCell(withIdentifier: ProductsTableViewCell.identifier, for: indexPath) as! ProductsTableViewCell
-            cell.set(products, genre: genre)
+            cell.set(products, genre: genre) { [weak self] product in
+                self?.preseter.tapProduct(product)
+            }
             return cell
+        } else if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier, for: indexPath) as! HeaderTableViewCell
+                cell.title = "購入履歴"
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as! HistoryTableViewCell
+                let purchase = preseter.history.value[indexPath.row - 1]
+                cell.set(purchase)
+                return cell
+            }
         }
         return UITableViewCell()
     }
 }
 
 
-// MARK: - UITableViewDelgate
+// MARK: - UITableViewDelegate
  
 extension UserPageViewController: UITableViewDelegate {
 

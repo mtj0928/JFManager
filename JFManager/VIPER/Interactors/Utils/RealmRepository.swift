@@ -25,5 +25,4 @@ class LocalRealmRepository: RealmRepository {
         let realm = try! Realm()
         return realm
     }
-    
 }

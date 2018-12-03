@@ -12,25 +12,25 @@ import RxCocoa
 
 class UserPagePresenter: UserPagePresenterProtocol {
 
-    let user: BehaviorRelay<User>
+    var user: BehaviorRelay<User> {
+        return interactor.user
+    }
     var products: BehaviorRelay<[Genre : [Product]]> {
         return interactor.products
+    }
+    var history: BehaviorRelay<[Purchase]> {
+        return interactor.history
     }
 
     private let interactor: UserPageInteractorProtocol
     private let router: UserPageRouterProtocol
 
-    init(_ user: User, interactor: UserPageInteractorProtocol, router: UserPageRouterProtocol) {
-        self.user = BehaviorRelay(value: user)
+    init(interactor: UserPageInteractorProtocol, router: UserPageRouterProtocol) {
         self.interactor = interactor
         self.router = router
     }
 
-    func tapBuyButton(_ product: Product) {
-        interactor.buy(product)
-    }
-
-    func showHistory() {
-        router.presentHistory()
+    func tapProduct(_ product: Product) {
+        router.showConfirm(user: user.value, product: product)
     }
 }

@@ -12,6 +12,15 @@ import UIKit
 
 enum Genre: String {
     case food, drink
+
+    var japanese: String {
+        switch self {
+        case .drink:
+            return "ジュース会"
+        case .food:
+            return "食品会"
+        }
+    }
 }
 
 class Product: Object {

@@ -11,14 +11,14 @@ import UIKit
 
 class UserPageViewBuilder {
 
-    static func buildDefault(user: User) -> UIViewController {
+    static func buildDefault(user: User) -> UserPageViewController {
         let viewController = UserPageViewController.createFromStoryboard()
         let purchaseStore = PurchaseLocalStore(LocalRealmRepository())
         let productStore = ProductLocalStore(LocalRealmRepository())
 
         let interactor = UserPageInteractor(user: user, purchaseStore: purchaseStore, productStore: productStore)
-        let router = UserPageRouter()
-        let presenter = UserPagePresenter(user, interactor: interactor, router: router)
+        let router = UserPageRouter(viewController)
+        let presenter = UserPagePresenter(interactor: interactor, router: router)
         viewController.preseter = presenter
 
         return viewController

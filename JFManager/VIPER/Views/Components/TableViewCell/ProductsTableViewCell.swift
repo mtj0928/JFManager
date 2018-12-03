@@ -17,6 +17,7 @@ class ProductsTableViewCell: UITableViewCell {
     @IBOutlet private weak var collectionView: UICollectionView!
 
     private var products: [Product] = []
+    var tapedItem: ((Product) -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,10 +25,11 @@ class ProductsTableViewCell: UITableViewCell {
         setUpCollectionView()
     }
 
-    func set(_ products: [Product], genre: Genre) {
-        genreNameLabel.text = genre.rawValue
+    func set(_ products: [Product], genre: Genre, tapedItem: @escaping ((Product) -> ())) {
+        genreNameLabel.text = genre.japanese
         self.products = products
         self.collectionView.reloadData()
+        self.tapedItem = tapedItem
     }
 }
 
@@ -67,6 +69,10 @@ extension ProductsTableViewCell: UICollectionViewDataSource {
 
 extension ProductsTableViewCell: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products[indexPath.item]
+        tapedItem?(product)
+    }
 }
 
 

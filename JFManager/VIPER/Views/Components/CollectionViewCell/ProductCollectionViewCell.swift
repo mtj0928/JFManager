@@ -23,7 +23,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     func set(_ product: Product) {
-        productImageView.image = product.image
+        let image = product.image
+        DispatchQueue.main.async { [weak self] in
+            self?.productImageView.image = image
+        }
         productNameLabel.text = product.name
         priceLabel.text = "\(product.price) 円"
     }

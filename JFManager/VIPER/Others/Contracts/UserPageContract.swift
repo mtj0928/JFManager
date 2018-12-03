@@ -14,16 +14,18 @@ import RxCocoa
 protocol UserPagePresenterProtocol {
     var user: BehaviorRelay<User> { get }
     var products: BehaviorRelay<[Genre: [Product]]> { get }
+    var history: BehaviorRelay<[Purchase]> { get }
 
-    func tapBuyButton(_ product: Product)
-    func showHistory()
+    func tapProduct(_ product: Product)
 }
 
 protocol UserPageInteractorProtocol {
-    var  products: BehaviorRelay<[Genre : [Product]]> { get }
+    var user: BehaviorRelay<User> { get }
+    var products: BehaviorRelay<[Genre : [Product]]> { get }
+    var history: BehaviorRelay<[Purchase]> { get }
     func buy(_ product: Product)
 }
 
 protocol UserPageRouterProtocol {
-    func presentHistory()
+    func showConfirm(user: User, product: Product)
 }
