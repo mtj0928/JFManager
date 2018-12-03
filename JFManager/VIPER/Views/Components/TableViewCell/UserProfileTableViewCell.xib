@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="splitview1_2"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="210" id="9Qu-8i-4bL" customClass="UserProfileTableViewCell" customModule="JFManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="497" height="233"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Qu-8i-4bL" id="DwN-nD-1vu">
+                <rect key="frame" x="0.0" y="0.0" width="497" height="232.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-wd-faY">
+                        <rect key="frame" x="44" y="56.5" width="120" height="120"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Oz9-wd-faY" secondAttribute="height" multiplier="1:1" id="Ven-hi-c7h"/>
+                            <constraint firstAttribute="width" constant="120" id="hUy-y6-CM4"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IED-R2-1sw">
+                        <rect key="frame" x="188" y="59.5" width="289" height="97.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="松本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jL-Fr-l1E">
+                                <rect key="frame" x="0.0" y="0.0" width="71" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laW-Ag-S2h">
+                                <rect key="frame" x="0.0" y="42" width="289" height="30"/>
+                                <state key="normal" title="履歴"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-0e-nBC">
+                                <rect key="frame" x="0.0" y="72" width="139" height="25.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今月: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9H-s6-xVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4200 円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNy-l1-JV4">
+                                        <rect key="frame" x="61.5" y="0.0" width="77.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="5ya-0e-nBC" firstAttribute="top" secondItem="laW-Ag-S2h" secondAttribute="bottom" id="EMJ-px-XQz"/>
+                            <constraint firstItem="laW-Ag-S2h" firstAttribute="top" secondItem="7jL-Fr-l1E" secondAttribute="bottom" id="HCT-dC-ikK"/>
+                            <constraint firstAttribute="trailing" secondItem="laW-Ag-S2h" secondAttribute="trailing" id="Tin-W6-adt"/>
+                            <constraint firstItem="laW-Ag-S2h" firstAttribute="leading" secondItem="IED-R2-1sw" secondAttribute="leading" id="V43-iG-0zb"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="laW-Ag-S2h" firstAttribute="centerY" secondItem="Oz9-wd-faY" secondAttribute="centerY" id="2Ou-sr-rsA"/>
+                    <constraint firstItem="Oz9-wd-faY" firstAttribute="leading" secondItem="DwN-nD-1vu" secondAttribute="leadingMargin" priority="999" constant="24" id="Ami-Zi-JXi"/>
+                    <constraint firstItem="IED-R2-1sw" firstAttribute="centerY" secondItem="DwN-nD-1vu" secondAttribute="centerY" id="H56-jM-N2m"/>
+                    <constraint firstItem="Oz9-wd-faY" firstAttribute="centerY" secondItem="DwN-nD-1vu" secondAttribute="centerY" id="QHh-Yb-htx"/>
+                    <constraint firstItem="Oz9-wd-faY" firstAttribute="top" secondItem="DwN-nD-1vu" secondAttribute="topMargin" constant="25.5" id="Tbs-c1-OX5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IED-R2-1sw" secondAttribute="trailing" id="pf0-EA-f97"/>
+                    <constraint firstItem="IED-R2-1sw" firstAttribute="leading" secondItem="Oz9-wd-faY" secondAttribute="trailing" constant="24" id="wgU-Ik-HQd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="historyButton" destination="laW-Ag-S2h" id="YOp-Yd-I08"/>
+                <outlet property="iconImageView" destination="Oz9-wd-faY" id="gZc-kn-pD2"/>
+                <outlet property="nameLabel" destination="7jL-Fr-l1E" id="PxB-MP-cJT"/>
+                <outlet property="pricaeLabel" destination="mNy-l1-JV4" id="4bV-Jh-qdB"/>
+            </connections>
+            <point key="canvasLocation" x="228.9940828402367" y="203.515625"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -12,6 +12,7 @@ import RealmSwift
 
 protocol UserStore {
     func create(name: String, position: Position, image: UIImage?) -> User
+    func update(user: User, name: String, position: Position, image: UIImage?) -> User
     func fetch() -> Results<User>
 }
 
@@ -33,6 +34,19 @@ class UserLocalStore: LocalDataStore, UserStore {
 
         return user
     }
+
+    func update(user: User, name: String, position: Position, image: UIImage?) -> User {
+        let realm = repository.build()
+
+        try! realm.write {
+            user.name = name
+            user.position = position
+            user.image = image
+        }
+
+        return user
+    }
+
 
     func fetch() -> Results<User> {
         let realm = repository.build()

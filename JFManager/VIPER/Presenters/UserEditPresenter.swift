@@ -13,7 +13,6 @@ import RxCocoa
 
 class UserEditPresenter: UserEditPresenterProtocol {
 
-
     let name = BehaviorRelay<String>(value: "")
     let selectedPositionName = BehaviorRelay<String?>(value: nil)
     let image = BehaviorRelay<UIImage?>(value: nil)
@@ -30,6 +29,13 @@ class UserEditPresenter: UserEditPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.user = user
+
+        if let user = user {
+            name.accept(user.name)
+            selectPosition.accept(user.position)
+            selectedPositionName.accept(user.position.name)
+            image.accept(user.image)
+        }
     }
 
     func selectPosition(at index: Int?) {

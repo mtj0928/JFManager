@@ -35,4 +35,8 @@ class UserManagePresenter: UserManagePresenterProtocol {
     func tapAddUser() {
         router.presentUserEdit(user: nil)
     }
+
+    func showDetail(_ user: User) {
+        router.presentUserEdit(user: user)
+    }
 }

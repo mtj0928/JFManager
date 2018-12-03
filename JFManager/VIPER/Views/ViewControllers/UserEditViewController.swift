@@ -24,6 +24,7 @@ class UserEditViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpImageView()
         setUpNavigationBar()
         setUpTextFields()
         setUpPicker()
@@ -31,11 +32,20 @@ class UserEditViewController: UITableViewController {
 }
 
 
-// - MARK: Set Up
+// MARK: - Set Up
 
 extension UserEditViewController {
 
+    private func setUpImageView() {
+        presenter.image
+            .asDriver()
+            .drive(imageView.rx.image)
+            .disposed(by: disposeBag)
+    }
+    
     private func setUpTextFields() {
+        nameTextField.text = presenter.name.value
+
         nameTextField.rx
             .text
             .asDriver()
@@ -103,6 +113,20 @@ extension UserEditViewController {
 }
 
 
+// MARK: - UITableViewDelegate
+
+extension UserEditViewController {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+}
+
+
 // - MARK: UIPickerViewDataSource
 
 extension UserEditViewController: UIPickerViewDataSource {
@@ -134,5 +158,18 @@ extension UserEditViewController: UIPickerViewDelegate {
         } else {
             presenter.selectPosition(at: row)
         }
+    }
+}
+
+
+//MARK: - UIImagePickerControllerDelegate
+
+extension UserEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+
+        presenter.image.accept(image.fixedOrientation())
+        picker.dismiss(animated: true, completion: nil)
     }
 }

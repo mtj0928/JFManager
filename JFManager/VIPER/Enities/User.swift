@@ -16,6 +16,8 @@ class User: Object {
     @objc dynamic var name = "Kusumoto Lab"
     @objc dynamic var position: Position!
     @objc dynamic var isActive = true
+    @objc dynamic var nowPrice = 0
+    let history = List<Purchase>()
     var image: UIImage? {
         set { setImage(value: newValue) }
         get { return getImage() }

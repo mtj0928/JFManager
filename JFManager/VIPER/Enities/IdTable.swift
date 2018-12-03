@@ -16,4 +16,5 @@ class IdTable: Object {
     @objc dynamic private let id = IdTable.uniquId
     @objc dynamic var userId = 0
     @objc dynamic var productId = 0
+    @objc dynamic var purchaseId = 0
 }

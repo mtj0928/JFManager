@@ -34,6 +34,7 @@ extension UserManageViewController {
 
     private func setUpTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
 
         tableView.registerCell(identifier: UserShortCell.identifier)
 
@@ -77,5 +78,18 @@ extension UserManageViewController: UITableViewDataSource {
             cell.set(user)
         }
         return cell
+    }
+}
+
+
+// MARK: - UITableViewDelegate
+
+extension UserManageViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let position = presenter.positions.value[indexPath.section]
+        guard let user = presenter.users.value[position]?[indexPath.row] else { return }
+
+        presenter.showDetail(user)
     }
 }

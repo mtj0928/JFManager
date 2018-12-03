@@ -118,6 +118,7 @@ extension ProductEditViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
 
-        presenter.productImage.accept(image)
+        presenter.productImage.accept(image.fixedOrientation())
+        picker.dismiss(animated: true, completion: nil)
     }
 }

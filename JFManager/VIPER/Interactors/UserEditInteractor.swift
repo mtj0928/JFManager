@@ -36,8 +36,11 @@ class UserEditInteractor: UserEditInteractorProtocol {
     }
 
     func update(_ user: User, name: String, position: Position, image: UIImage?) {
+        _ = userStore.update(user: user, name: name, position: position, image: image)
     }
 
-    func update(_ user: User, name: String, position: String, image: UIImage?) {
+    func update(_ user: User, name: String, position positionText: String, image: UIImage?) {
+        let position = positionStore.create(name: positionText)
+        _ = userStore.update(user: user, name: name, position: position, image: image)
     }
 }

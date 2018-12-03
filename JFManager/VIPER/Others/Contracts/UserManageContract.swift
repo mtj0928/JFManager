@@ -17,6 +17,7 @@ protocol UserManagePresenterProtocol {
     var update: Observable<Void> { get }
 
     func tapAddUser()
+    func showDetail(_ user: User)
 }
 
 protocol UserManageInteractorProtocol {

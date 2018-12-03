@@ -16,7 +16,14 @@ protocol RealmRepository {
 class LocalRealmRepository: RealmRepository {
 
     func build() -> Realm {
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { _, _ in }
+        )
+
+        Realm.Configuration.defaultConfiguration = config
         let realm = try! Realm()
         return realm
     }
+    
 }

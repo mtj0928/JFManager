@@ -18,8 +18,7 @@ class MasterRouter: MasterRouterProtocol {
     }
 
     func show(user: User) {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.white
+        let viewController = UserPageViewBuilder.buildDefault(user: user)
         splitViewController.showDetailViewController(viewController, sender: self)
     }
 
