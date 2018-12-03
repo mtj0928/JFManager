@@ -61,8 +61,9 @@ class Product: Object {
 extension Product {
 
     private func setImage(value: UIImage?) {
-        imageCache = value
-        imageData = value?.pngData()
+        let image = value?.resized(withPercentage: 0.5)
+        imageCache = image
+        imageData = image?.pngData()
     }
 
     private func getImage() -> UIImage? {
