@@ -12,18 +12,14 @@ import UIKit
 class MasterRouter: MasterRouterProtocol {
 
     private let splitViewController: UISplitViewController
-    var userPageViewController: UserPageViewController?
 
     init(_ splitViewController: UISplitViewController) {
         self.splitViewController = splitViewController
     }
 
     func show(user: User) {
-        if userPageViewController == nil  {
-            self.userPageViewController = UserPageViewBuilder.buildDefault(user: user)
-        }
-        userPageViewController?.set(user)
-        splitViewController.showDetailViewController(userPageViewController!, sender: self)
+        let viewController = UserPageViewBuilder.buildDefault(user: user)
+        splitViewController.showDetailViewController(viewController, sender: self)
     }
 
     func showSetting() {

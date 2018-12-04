@@ -26,8 +26,12 @@ class ProductEditInteractor: ProductEditInteractorProtocol {
     }
 
     func update(product: Product, name: String, price: Int, image: UIImage?) {
-        delete(product: product)
-        create(name: name, price: price, image: image)
+        if product.price != price {
+            delete(product: product)
+            create(name: name, price: price, image: image)
+        } else {
+            _ = dataStore.update(product, name: name, image: image)
+        }
     }
 
     func delete(product: Product) {

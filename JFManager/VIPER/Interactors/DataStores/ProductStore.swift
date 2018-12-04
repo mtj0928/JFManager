@@ -13,6 +13,8 @@ import RealmSwift
 protocol ProductStore {
 
     func create(name: String, price: Int, genre: Genre, image: UIImage?) -> Product
+    func update(_ product: Product, name: String, image: UIImage?) -> Product
+    func fetch() ->  Results<Product>
     func fetch(genre: Genre) ->  Results<Product>
     func delte(_ product: Product) 
 }
@@ -36,11 +38,24 @@ class ProductLocalStore: LocalDataStore, ProductStore {
         return product
     }
 
+    func update(_ product: Product, name: String, image: UIImage?) -> Product {
+        let realm = repository.build()
+        try! realm.write {
+            product.name = name
+            product.image = image
+        }
+        return product
+    }
+
+    func fetch() -> Results<Product> {
+        let realm = repository.build()
+        return realm.objects(Product.self)
+    }
+
     func fetch(genre: Genre) -> Results<Product> {
         let realm = repository.build()
         let results = realm.objects(Product.self)
             .filter("_genre == %@", genre.rawValue)
-            .filter("isActive == %@", true)
         return results
     }
 

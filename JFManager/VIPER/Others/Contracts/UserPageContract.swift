@@ -15,6 +15,7 @@ protocol UserPagePresenterProtocol {
     var user: BehaviorRelay<User> { get }
     var products: BehaviorRelay<[Genre: [Product]]> { get }
     var history: BehaviorRelay<[Purchase]> { get }
+    var update: Observable<Void> { get }
 
     func tapProduct(_ product: Product)
     func toggle(_ purchase: Purchase)

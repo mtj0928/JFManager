@@ -21,7 +21,7 @@ class ProductManageInteractor: ProductManageInteractorProtocol {
 
     init(dataStore: ProductStore, genre: Genre) {
         self.dataStore = dataStore
-        productResults = dataStore.fetch(genre: genre)
+        productResults = dataStore.fetch(genre: genre).filter("isActive == %@", true)
         notification = productResults.observe({ [weak self] _ in
             guard let `self` = self else { return }
             self.products.accept(self.productResults.map { $0 })

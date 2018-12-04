@@ -61,9 +61,14 @@ class Product: Object {
 extension Product {
 
     private func setImage(value: UIImage?) {
-        let image = value?.resized(withPercentage: 0.5)
+        var image = value
+        var data = image?.pngData()
+        while (data?.count ?? 0) > 1 * 1024 * 1024 {
+            image = image?.resized(withPercentage: 0.5)
+            data = image?.pngData()
+        }
         imageCache = image
-        imageData = image?.pngData()
+        imageData = data
     }
 
     private func getImage() -> UIImage? {
@@ -80,3 +85,4 @@ extension Product {
         }
     }
 }
+

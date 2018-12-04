@@ -21,7 +21,11 @@ class UserPageInteractor: UserPageInteractorProtocol {
     private let productStore: ProductStore
 
     private var historyResults: Results<Purchase>!
-    private var notification: NotificationToken?
+    private var historyNotification: NotificationToken?
+
+    private var productResults: Results<Product>!
+    private var productNotification: NotificationToken?
+
     private var disposeBag = DisposeBag()
 
     init(user: User, purchaseStore: PurchaseStore, productStore: ProductStore) {
@@ -29,32 +33,47 @@ class UserPageInteractor: UserPageInteractorProtocol {
         self.purchaseStore = purchaseStore
         self.productStore = productStore
 
-        update()
+        updateHistory()
+        updateProduct()
 
         self.user.subscribe(onNext: { [weak self] user in
-            self?.update()
+            self?.updateHistory()
         }).disposed(by: disposeBag)
-
-        products.accept([
-            .drink: getArray(genre: .drink),
-            .food: getArray(genre: .food)
-            ])
     }
 
-    private func update() {
-        notification?.invalidate()
+    private func updateHistory() {
+        historyNotification?.invalidate()
         historyResults = user.value.history.sorted(byKeyPath: "date", ascending: false)
 
         history.accept(historyResults.map({ $0 }))
 
-        notification = historyResults.observe { [weak self](_) in
+        historyNotification = historyResults.observe { [weak self] _ in
             guard let `self` = self else { return }
             self.history.accept(self.historyResults.map({ $0 }))
         }
     }
 
+    private func updateProduct() {
+        productNotification?.invalidate()
+        productResults = productStore.fetch().filter("isActive == %@", true)
+
+        products.accept([
+            .drink: getArray(genre: .drink),
+            .food: getArray(genre: .food)
+            ])
+
+        productNotification = productResults._observe({ [weak self] _ in
+            guard let `self` = self else { return }
+            self.products.accept([
+                .drink: self.getArray(genre: .drink),
+                .food: self.getArray(genre: .food)
+                ])
+        })
+    }
+
     deinit {
-        notification?.invalidate()
+        historyNotification?.invalidate()
+        productNotification?.invalidate()
     }
 
     private func getArray(genre: Genre) -> [Product] {

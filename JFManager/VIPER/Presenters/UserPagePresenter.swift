@@ -21,6 +21,7 @@ class UserPagePresenter: UserPagePresenterProtocol {
     var history: BehaviorRelay<[Purchase]> {
         return interactor.history
     }
+    private(set) lazy var update: Observable<Void> = Observable.combineLatest(products, history) { (_, _)  in }
 
     private let interactor: UserPageInteractorProtocol
     private let router: UserPageRouterProtocol

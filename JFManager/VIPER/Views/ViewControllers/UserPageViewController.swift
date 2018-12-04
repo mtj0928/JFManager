@@ -24,11 +24,6 @@ class UserPageViewController: UIViewController {
 
         setUpTableView()
     }
-
-    func set(_ user: User) {
-        preseter.user.accept(user)
-        tableView?.reloadData()
-    }
 }
 
 
@@ -49,7 +44,7 @@ extension UserPageViewController {
         tableView.registerCell(identifier: HistoryTableViewCell.identifier)
 
         preseter.history.asDriver().drive(onNext: { [weak self] _ in
-            self?.tableView.reloadSections(IndexSet.init(integer: 3), with: .automatic)
+            self?.tableView.reloadSections(IndexSet(integer: 3), with: .automatic)
         }).disposed(by: disposeBag)
     }
 }
