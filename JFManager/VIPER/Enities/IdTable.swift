@@ -13,7 +13,7 @@ class IdTable: Object {
 
     static let uniquId = 0
 
-    @objc dynamic private let id = IdTable.uniquId
+    @objc dynamic private var id = IdTable.uniquId
     @objc dynamic var userId = 0
     @objc dynamic var productId = 0
     @objc dynamic var purchaseId = 0

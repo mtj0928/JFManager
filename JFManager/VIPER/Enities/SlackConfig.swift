@@ -11,7 +11,7 @@ import RealmSwift
 
 
 class SlackConfig: Object {
-    @objc dynamic private let key = 0;
+    @objc dynamic private var id = 0
     @objc dynamic var token: String? = nil
     @objc dynamic var reportChannel: String? = nil
     @objc dynamic var drinkChannel: String? = nil
