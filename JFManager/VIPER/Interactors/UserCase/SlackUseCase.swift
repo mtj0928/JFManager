@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol SlackUseCaseProtocol {
+    func fetchConfig() -> SlackConfig
     func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?)
     func post(channel: String, text: String) -> Single<Void>?
 }
@@ -23,6 +24,10 @@ class SlackUseCase: SlackUseCaseProtocol {
     init(api: SlackStore, configStore: SlackConfigStore) {
         self.api = api
         self.configStore = configStore
+    }
+
+    func fetchConfig() -> SlackConfig {
+        return configStore.fetch()
     }
 
     func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?) {
