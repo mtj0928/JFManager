@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+
 // MARK: Methods
 
 extension AppDelegate {

@@ -9,12 +9,15 @@
 import Foundation
 import RealmSwift
 
-class LocalDataStore {
+class DataStore {
     let repository: RealmRepository
     
     init(_ repository: RealmRepository) {
         self.repository = repository
     }
+}
+
+class LocalDataStore: DataStore {
 
     func fetchTable() -> IdTable {
         let realm = repository.build()

@@ -43,6 +43,13 @@
 		9077C42221B4C790003EEB03 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9077C42121B4C790003EEB03 /* HeaderTableViewCell.xib */; };
 		9077C42421B4C965003EEB03 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C42321B4C965003EEB03 /* HistoryTableViewCell.swift */; };
 		9077C42621B4C978003EEB03 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9077C42521B4C978003EEB03 /* HistoryTableViewCell.xib */; };
+		9077C42A21B756F3003EEB03 /* SKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9077C42721B756F3003EEB03 /* SKCore.framework */; };
+		9077C42B21B756F3003EEB03 /* SKClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9077C42821B756F3003EEB03 /* SKClient.framework */; };
+		9077C42C21B756F3003EEB03 /* SKWebAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9077C42921B756F3003EEB03 /* SKWebAPI.framework */; };
+		9077C42E21B7576F003EEB03 /* SlackStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C42D21B7576F003EEB03 /* SlackStore.swift */; };
+		9077C43021B7626D003EEB03 /* SlackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C42F21B7626D003EEB03 /* SlackConfig.swift */; };
+		9077C43821B76D48003EEB03 /* SlackConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C43721B76D48003EEB03 /* SlackConfigStore.swift */; };
+		9077C43A21B76E7C003EEB03 /* SlackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C43921B76E7C003EEB03 /* SlackUseCase.swift */; };
 		907BC99721B21750002C3A85 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99521B21750002C3A85 /* Realm.framework */; };
 		907BC99821B21750002C3A85 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99621B21750002C3A85 /* RealmSwift.framework */; };
 		907BC99C21B21872002C3A85 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99A21B21871002C3A85 /* RxCocoa.framework */; };
@@ -141,6 +148,13 @@
 		9077C42121B4C790003EEB03 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		9077C42321B4C965003EEB03 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9077C42521B4C978003EEB03 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		9077C42721B756F3003EEB03 /* SKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKCore.framework; path = Carthage/Build/iOS/SKCore.framework; sourceTree = "<group>"; };
+		9077C42821B756F3003EEB03 /* SKClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKClient.framework; path = Carthage/Build/iOS/SKClient.framework; sourceTree = "<group>"; };
+		9077C42921B756F3003EEB03 /* SKWebAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKWebAPI.framework; path = Carthage/Build/iOS/SKWebAPI.framework; sourceTree = "<group>"; };
+		9077C42D21B7576F003EEB03 /* SlackStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackStore.swift; sourceTree = "<group>"; };
+		9077C42F21B7626D003EEB03 /* SlackConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackConfig.swift; sourceTree = "<group>"; };
+		9077C43721B76D48003EEB03 /* SlackConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackConfigStore.swift; sourceTree = "<group>"; };
+		9077C43921B76E7C003EEB03 /* SlackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUseCase.swift; sourceTree = "<group>"; };
 		907BC99521B21750002C3A85 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		907BC99621B21750002C3A85 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		907BC99A21B21871002C3A85 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -209,6 +223,9 @@
 				907BC99D21B21872002C3A85 /* RxSwift.framework in Frameworks */,
 				907BC99721B21750002C3A85 /* Realm.framework in Frameworks */,
 				907BC99821B21750002C3A85 /* RealmSwift.framework in Frameworks */,
+				9077C42A21B756F3003EEB03 /* SKCore.framework in Frameworks */,
+				9077C42B21B756F3003EEB03 /* SKClient.framework in Frameworks */,
+				9077C42C21B756F3003EEB03 /* SKWebAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +265,9 @@
 		907BC99421B2174F002C3A85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9077C42821B756F3003EEB03 /* SKClient.framework */,
+				9077C42721B756F3003EEB03 /* SKCore.framework */,
+				9077C42921B756F3003EEB03 /* SKWebAPI.framework */,
 				907BC99A21B21871002C3A85 /* RxCocoa.framework */,
 				907BC99B21B21872002C3A85 /* RxSwift.framework */,
 				907BC99521B21750002C3A85 /* Realm.framework */,
@@ -361,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				907BC9CE21B23816002C3A85 /* IdTable.swift */,
+				9077C42F21B7626D003EEB03 /* SlackConfig.swift */,
 				9003F12B21B423980009EEBD /* Purchase.swift */,
 				907BC9D021B23D15002C3A85 /* Position.swift */,
 				90EDB4B521B3B76C004C15CC /* Product.swift */,
@@ -377,6 +398,8 @@
 				9003F12D21B425600009EEBD /* PurchaseStore.swift */,
 				907BC9F321B26C1D002C3A85 /* PositionStore.swift */,
 				907BC9D621B2508F002C3A85 /* UserStore.swift */,
+				9077C43721B76D48003EEB03 /* SlackConfigStore.swift */,
+				9077C42D21B7576F003EEB03 /* SlackStore.swift */,
 			);
 			path = DataStores;
 			sourceTree = "<group>";
@@ -445,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				907BC9FC21B2732D002C3A85 /* UserUseCase.swift */,
+				9077C43921B76E7C003EEB03 /* SlackUseCase.swift */,
 			);
 			path = UserCase;
 			sourceTree = "<group>";
@@ -577,6 +601,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SKClient.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SKCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SKWebAPI.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -620,6 +647,7 @@
 				907BC9EA21B260B9002C3A85 /* UITableView+extension.swift in Sources */,
 				9077C41E21B4B25B003EEB03 /* PurchaseConfirmViewBuilder.swift in Sources */,
 				907BC9F021B26231002C3A85 /* MasterPresenter.swift in Sources */,
+				9077C43A21B76E7C003EEB03 /* SlackUseCase.swift in Sources */,
 				907BCA0921B2D5E1002C3A85 /* SettingBuilder.swift in Sources */,
 				9003F10E21B3E17C0009EEBD /* ProductEditViewController.swift in Sources */,
 				9003F11A21B3EDF40009EEBD /* ProductEditRouter.swift in Sources */,
@@ -636,6 +664,7 @@
 				907BC9D921B2511D002C3A85 /* RealmRepository.swift in Sources */,
 				9003F11221B3E49F0009EEBD /* ProductEditViewBuilder.swift in Sources */,
 				9077C41A21B4B061003EEB03 /* PurchaseConfirmInteractor.swift in Sources */,
+				9077C43021B7626D003EEB03 /* SlackConfig.swift in Sources */,
 				90EDB4C221B3BEF4004C15CC /* ProductManageInteractor.swift in Sources */,
 				907BCA0121B277AA002C3A85 /* UserManageInteractor.swift in Sources */,
 				9003F11E21B415A70009EEBD /* UserPageViewController.swift in Sources */,
@@ -661,6 +690,8 @@
 				9077C42021B4C77A003EEB03 /* HeaderTableViewCell.swift in Sources */,
 				9003F13021B431DA0009EEBD /* UserPageViewBuilder.swift in Sources */,
 				9003F12A21B422530009EEBD /* UserPageInteractor.swift in Sources */,
+				9077C42E21B7576F003EEB03 /* SlackStore.swift in Sources */,
+				9077C43821B76D48003EEB03 /* SlackConfigStore.swift in Sources */,
 				9003F12C21B423980009EEBD /* Purchase.swift in Sources */,
 				9003F13221B432640009EEBD /* UserPageRouter.swift in Sources */,
 				907BC9C121B22C85002C3A85 /* UIViewController+extension.swift in Sources */,
