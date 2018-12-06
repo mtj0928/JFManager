@@ -10,6 +10,10 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    enum Section: Int, CaseIterable {
+        case user, slack, drink, food
+    }
+
     @IBOutlet private weak var tableView: UITableView!
 
     var presenter: SettingPresenterProtocol!
@@ -51,37 +55,44 @@ extension SettingViewController {
 extension SettingViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return Section.allCases.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 1 {
+        guard let category = Section(rawValue: section) else { return nil }
+
+        switch category {
+        case .drink:
             return "ジュース会"
-        } else if section == 2 {
+        case .food:
             return "食品会"
+        default:
+            return nil
         }
-        return nil
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1 || section == 2 {
+        guard let category = Section(rawValue: section) else { return 0 }
+        switch category {
+        case .drink, .food:
             return 2
+        default:
+            return 1
         }
-        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        if indexPath.section == 0 && indexPath.row == 0 {
+        guard let section = Section(rawValue: indexPath.section) else {
+            return cell
+        }
+        switch section {
+        case .drink, .food:
+            cell.textLabel?.text = indexPath.row == 0 ? "商品管理" : "売り上げ"
+        case .slack:
+            cell.textLabel?.text = "Slackの設定"
+        case .user:
             cell.textLabel?.text = "ユーザー管理"
-        } else if indexPath.section == 1 || indexPath.section == 2 {
-            if indexPath.row == 0 {
-                cell.textLabel?.text =  "商品管理"
-            } else if indexPath.row == 1 {
-                cell.textLabel?.text = "売り上げ"
-            }
         }
         return cell
     }
@@ -93,13 +104,17 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        switch section {
+        case .user:
             presenter.tapUserManagerCell()
-        } else if indexPath.section == 1 {
+        case .slack:
+            presenter.tapSlackSetingCell()
+        case .drink:
             if indexPath.row == 0 {
                 presenter.tapProductListCell(genre: .drink)
             }
-        } else if indexPath.section == 2 {
+        case .food:
             if indexPath.row == 0 {
                 presenter.tapProductListCell(genre: .food)
             }

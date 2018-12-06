@@ -11,7 +11,7 @@ import UIKit
 
 class SlackEditViewBuilder {
 
-    static func buildDefault(_ navigationViewController: UINavigationController) -> UIViewController {
+    static func buildDefault(_ navigationViewController: UINavigationController?) -> UIViewController {
         let viewController = SlackEditViewController.createFromStoryboard()
 
         let api = SlackAPI(LocalRealmRepository())

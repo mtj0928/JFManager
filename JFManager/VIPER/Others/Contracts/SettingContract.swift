@@ -12,10 +12,12 @@ import RxCocoa
 
 protocol SettingPresenterProtocol {
     func tapUserManagerCell()
+    func tapSlackSetingCell()
     func tapProductListCell(genre: Genre)
 }
 
 protocol SettingRouterProtocol {
     func presentUserManager()
+    func presentSlackSetting()
     func presentProductList(genre: Genre)
 }

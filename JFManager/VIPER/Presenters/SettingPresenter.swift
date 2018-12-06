@@ -20,6 +20,10 @@ class SettingPresenter: SettingPresenterProtocol {
         router.presentUserManager()
     }
 
+    func tapSlackSetingCell() {
+        router.presentSlackSetting()
+    }
+
     func tapProductListCell(genre: Genre) {
         router.presentProductList(genre: genre)
     }

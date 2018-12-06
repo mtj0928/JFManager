@@ -13,7 +13,7 @@ class SlackEditRouter: SlackEditRouterProtocol {
 
     private weak var navigationController: UINavigationController?
 
-    init(_ navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
 
