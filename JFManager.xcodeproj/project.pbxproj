@@ -57,6 +57,8 @@
 		9077C44421B7F1AF003EEB03 /* SlackEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C44321B7F1AF003EEB03 /* SlackEditInteractor.swift */; };
 		9077C44621B7F289003EEB03 /* SlackEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C44521B7F289003EEB03 /* SlackEditRouter.swift */; };
 		9077C44A21B7F301003EEB03 /* SlackEditViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C44921B7F301003EEB03 /* SlackEditViewBuilder.swift */; };
+		9077C44C21B8BCD2003EEB03 /* ManagerViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C44B21B8BCD2003EEB03 /* ManagerViewBuilder.swift */; };
+		9077C44E21B8BE54003EEB03 /* ManagerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077C44D21B8BE54003EEB03 /* ManagerContracts.swift */; };
 		907BC99721B21750002C3A85 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99521B21750002C3A85 /* Realm.framework */; };
 		907BC99821B21750002C3A85 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99621B21750002C3A85 /* RealmSwift.framework */; };
 		907BC99C21B21872002C3A85 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907BC99A21B21871002C3A85 /* RxCocoa.framework */; };
@@ -90,6 +92,7 @@
 		907BCA0B21B2D69E002C3A85 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0A21B2D69E002C3A85 /* SettingPresenter.swift */; };
 		907BCA0D21B2D9A7002C3A85 /* UserManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BCA0C21B2D9A7002C3A85 /* UserManageViewController.swift */; };
 		907BCA0F21B2D9B6002C3A85 /* UserManageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907BCA0E21B2D9B6002C3A85 /* UserManageViewController.storyboard */; };
+		908080EB21B906F100C98626 /* ManagerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908080EA21B906F100C98626 /* ManagerRouter.swift */; };
 		90EDB49D21B2DEA9004C15CC /* UserManagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */; };
 		90EDB4A121B36FB8004C15CC /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */; };
 		90EDB4A321B36FC9004C15CC /* UserEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */; };
@@ -169,6 +172,8 @@
 		9077C44321B7F1AF003EEB03 /* SlackEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackEditInteractor.swift; sourceTree = "<group>"; };
 		9077C44521B7F289003EEB03 /* SlackEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackEditRouter.swift; sourceTree = "<group>"; };
 		9077C44921B7F301003EEB03 /* SlackEditViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackEditViewBuilder.swift; sourceTree = "<group>"; };
+		9077C44B21B8BCD2003EEB03 /* ManagerViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewBuilder.swift; sourceTree = "<group>"; };
+		9077C44D21B8BE54003EEB03 /* ManagerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerContracts.swift; sourceTree = "<group>"; };
 		907BC99521B21750002C3A85 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		907BC99621B21750002C3A85 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		907BC99A21B21871002C3A85 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -202,6 +207,7 @@
 		907BCA0A21B2D69E002C3A85 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		907BCA0C21B2D9A7002C3A85 /* UserManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageViewController.swift; sourceTree = "<group>"; };
 		907BCA0E21B2D9B6002C3A85 /* UserManageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserManageViewController.storyboard; sourceTree = "<group>"; };
+		908080EA21B906F100C98626 /* ManagerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRouter.swift; sourceTree = "<group>"; };
 		90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagePresenter.swift; sourceTree = "<group>"; };
 		90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEditViewController.storyboard; sourceTree = "<group>"; };
@@ -385,6 +391,7 @@
 			children = (
 				9003F11921B3EDF40009EEBD /* ProductEditRouter.swift */,
 				9003F11B21B410570009EEBD /* MasterRouter.swift */,
+				908080EA21B906F100C98626 /* ManagerRouter.swift */,
 				90EDB4BF21B3BE3F004C15CC /* ProductManageRouter.swift */,
 				9077C41721B4AFD5003EEB03 /* PurchaseConfirmRouter.swift */,
 				907BCA0421B27B9E002C3A85 /* SettingRouter.swift */,
@@ -457,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				907BC9E321B25BCC002C3A85 /* MasterContract.swift */,
+				9077C44D21B8BE54003EEB03 /* ManagerContracts.swift */,
 				9003F11321B3EA220009EEBD /* ProductEditContract.swift */,
 				90EDB4BD21B3BCCE004C15CC /* ProductManageContract.swift */,
 				9077C41521B4AF28003EEB03 /* PurchaseConfirmContruct.swift */,
@@ -472,6 +480,7 @@
 		907BC9E621B25F13002C3A85 /* ViewBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				9077C44B21B8BCD2003EEB03 /* ManagerViewBuilder.swift */,
 				907BC9E721B25F24002C3A85 /* MasterBuilder.swift */,
 				9003F11121B3E49F0009EEBD /* ProductEditViewBuilder.swift */,
 				9077C41D21B4B25B003EEB03 /* PurchaseConfirmViewBuilder.swift */,
@@ -690,6 +699,7 @@
 				907BC9D921B2511D002C3A85 /* RealmRepository.swift in Sources */,
 				9003F11221B3E49F0009EEBD /* ProductEditViewBuilder.swift in Sources */,
 				9077C41A21B4B061003EEB03 /* PurchaseConfirmInteractor.swift in Sources */,
+				9077C44C21B8BCD2003EEB03 /* ManagerViewBuilder.swift in Sources */,
 				9077C43021B7626D003EEB03 /* SlackConfig.swift in Sources */,
 				90EDB4C221B3BEF4004C15CC /* ProductManageInteractor.swift in Sources */,
 				907BCA0121B277AA002C3A85 /* UserManageInteractor.swift in Sources */,
@@ -703,6 +713,7 @@
 				90EDB4B621B3B76C004C15CC /* Product.swift in Sources */,
 				90EDB4AF21B3816E004C15CC /* UserManageRouter.swift in Sources */,
 				90EDB4B821B3B8CB004C15CC /* ProductStore.swift in Sources */,
+				9077C44E21B8BE54003EEB03 /* ManagerContracts.swift in Sources */,
 				90EDB4C021B3BE3F004C15CC /* ProductManageRouter.swift in Sources */,
 				907BC9E821B25F24002C3A85 /* MasterBuilder.swift in Sources */,
 				907BC9FD21B2732D002C3A85 /* UserUseCase.swift in Sources */,
@@ -716,6 +727,7 @@
 				9077C43C21B7BAC2003EEB03 /* SlackEditViewController.swift in Sources */,
 				9077C42021B4C77A003EEB03 /* HeaderTableViewCell.swift in Sources */,
 				9003F13021B431DA0009EEBD /* UserPageViewBuilder.swift in Sources */,
+				908080EB21B906F100C98626 /* ManagerRouter.swift in Sources */,
 				9003F12A21B422530009EEBD /* UserPageInteractor.swift in Sources */,
 				9077C42E21B7576F003EEB03 /* SlackStore.swift in Sources */,
 				9077C43821B76D48003EEB03 /* SlackConfigStore.swift in Sources */,
