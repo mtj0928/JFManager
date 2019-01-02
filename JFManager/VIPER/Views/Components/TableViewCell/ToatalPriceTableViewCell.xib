@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="121" id="Mdy-CZ-Tun" customClass="ToatalPriceTableViewCell" customModule="JFManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mdy-CZ-Tun" id="27P-OT-G9k">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-jE-QbD">
+                        <rect key="frame" x="16" y="11" width="343" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今月の売り上げ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu9-az-gbk">
+                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-rX-aqM">
+                                <rect key="frame" x="0.0" y="21.5" width="343" height="77.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vev-lO-0XE">
+                                        <rect key="frame" x="89.5" y="11.5" width="164" height="55"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2f-bI-aTM">
+                                        <rect key="frame" x="261.5" y="46" width="17.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vev-lO-0XE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GBz-rX-aqM" secondAttribute="top" id="2G1-sI-921"/>
+                                    <constraint firstItem="F2f-bI-aTM" firstAttribute="leading" secondItem="vev-lO-0XE" secondAttribute="trailing" constant="8" id="K9K-hs-Dc3"/>
+                                    <constraint firstItem="vev-lO-0XE" firstAttribute="centerX" secondItem="GBz-rX-aqM" secondAttribute="centerX" id="Swo-a2-sFF"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vev-lO-0XE" secondAttribute="bottom" constant="11" id="X1c-xU-NwA"/>
+                                    <constraint firstItem="F2f-bI-aTM" firstAttribute="bottom" secondItem="vev-lO-0XE" secondAttribute="bottom" id="bUl-0k-YsQ"/>
+                                    <constraint firstItem="vev-lO-0XE" firstAttribute="centerY" secondItem="GBz-rX-aqM" secondAttribute="centerY" id="gXg-3K-5lg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GBz-rX-aqM" firstAttribute="width" secondItem="3Ss-jE-QbD" secondAttribute="width" id="QWr-Rb-Q7v"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Ss-jE-QbD" firstAttribute="leading" secondItem="27P-OT-G9k" secondAttribute="leadingMargin" id="4NU-y8-nfA"/>
+                    <constraint firstItem="3Ss-jE-QbD" firstAttribute="top" secondItem="27P-OT-G9k" secondAttribute="topMargin" id="Pmw-oN-wz7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3Ss-jE-QbD" secondAttribute="bottom" id="RG4-bt-Lkw"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3Ss-jE-QbD" secondAttribute="trailing" id="jz9-qV-pxn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="priceLabel" destination="vev-lO-0XE" id="RZc-bz-Rag"/>
+            </connections>
+            <point key="canvasLocation" x="152.80000000000001" y="8.5457271364317844"/>
+        </tableViewCell>
+    </objects>
+</document>

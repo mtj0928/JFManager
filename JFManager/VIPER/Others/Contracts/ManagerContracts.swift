@@ -12,16 +12,26 @@ import RxCocoa
 
 protocol ManagerPresenterProtocol {
     var genre: BehaviorRelay<Genre> { get }
+    var totalPrice: BehaviorRelay<Int> { get }
+    var managerUser: BehaviorRelay<User?> { get }
+    var users: BehaviorRelay<[User]> { get }
 
     func sendReport()
     func sendCSV()
+    func changeManager(user: User)
 }
 
 protocol ManagerInteractorProtocol {
-    func sendCSV()
-    func sendReport()
+    var genre: BehaviorRelay<Genre> { get }
+    var totalPrice: BehaviorRelay<Int> { get }
+    var manager: BehaviorRelay<User?> { get }
+    var users: BehaviorRelay<[User]> { get }
+
+    func sendCSV() -> Single<Void>?
+    func sendReport() -> Single<Void>?
+    func changeManager(user: User)
 }
 
 protocol ManagerRouterProtocol {
-    func dimiss()
+    func dismiss()
 }

@@ -113,10 +113,14 @@ extension SettingViewController: UITableViewDelegate {
         case .drink:
             if indexPath.row == 0 {
                 presenter.tapProductListCell(genre: .drink)
+            } else if indexPath.row == 1 {
+                presenter.tapManager(genre: .drink)
             }
         case .food:
             if indexPath.row == 0 {
                 presenter.tapProductListCell(genre: .food)
+            } else if indexPath.row == 1 {
+                presenter.tapManager(genre: .food)
             }
         }
     }

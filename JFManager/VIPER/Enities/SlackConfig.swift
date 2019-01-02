@@ -16,8 +16,28 @@ class SlackConfig: Object {
     @objc dynamic var reportChannel: String? = nil
     @objc dynamic var drinkChannel: String? = nil
     @objc dynamic var foodChannel: String? = nil
+    @objc dynamic var drinkManager: User? = nil
+    @objc dynamic var foodManager: User? = nil
 
     override class func primaryKey() -> String? {
         return "id"
+    }
+
+    func channel(genre: Genre) -> String? {
+        switch genre {
+        case .drink:
+            return drinkChannel
+        case .food:
+            return foodChannel
+        }
+    }
+
+    func manager(genre: Genre) -> User? {
+        switch genre {
+        case .drink:
+            return drinkManager
+        case .food:
+            return foodManager
+        }
     }
 }

@@ -10,13 +10,13 @@ import Foundation
 
 protocol SlackConfigStore {
 
-    func update(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?)
+    func update(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?, foodManager: User?, drinkManager: User?)
     func fetch() -> SlackConfig
 }
 
 class SlackConfigLocalStore: LocalDataStore, SlackConfigStore {
 
-    func update(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?) {
+    func update(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?, foodManager: User?, drinkManager: User?) {
         let realm = repository.build()
         let config = fetch()
         try! realm.write {
@@ -24,6 +24,8 @@ class SlackConfigLocalStore: LocalDataStore, SlackConfigStore {
             config.reportChannel = reportChannel
             config.drinkChannel = drinkChannel
             config.foodChannel = foodChannel
+            config.drinkManager = drinkManager
+            config.foodManager = foodManager
         }
     }
 

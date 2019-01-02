@@ -14,10 +14,12 @@ protocol SettingPresenterProtocol {
     func tapUserManagerCell()
     func tapSlackSetingCell()
     func tapProductListCell(genre: Genre)
+    func tapManager(genre: Genre)
 }
 
 protocol SettingRouterProtocol {
     func presentUserManager()
     func presentSlackSetting()
     func presentProductList(genre: Genre)
+    func presentManager(genre: Genre)
 }

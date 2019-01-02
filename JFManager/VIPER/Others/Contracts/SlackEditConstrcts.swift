@@ -23,7 +23,7 @@ protocol SlackEditPresenterProtocol {
 protocol SlackEditInteractorProtocol {
     var config: BehaviorRelay<SlackConfig> { get }
 
-    func save(token: String?, reportChannel: String?, drinkChanne: String?, foodChannel: String?)
+    func save(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?)
 }
 
 protocol SlackEditRouterProtocol {

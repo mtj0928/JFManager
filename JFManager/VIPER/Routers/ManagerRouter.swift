@@ -17,7 +17,7 @@ class ManagerRouter: ManagerRouterProtocol {
         self.navigationController = navigationController
     }
 
-    func dimiss() {
+    func dismiss() {
         navigationController?.popViewController(animated: true)
     }
 }

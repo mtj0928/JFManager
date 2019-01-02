@@ -12,7 +12,7 @@ import RxCocoa
 
 protocol SlackUseCaseProtocol {
     func fetchConfig() -> SlackConfig
-    func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?)
+    func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?, foodManager: User?, drinkManager: User?)
     func post(channel: String, text: String) -> Single<Void>?
 }
 
@@ -30,10 +30,9 @@ class SlackUseCase: SlackUseCaseProtocol {
         return configStore.fetch()
     }
 
-    func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?) {
-        configStore.update(token: token, reportChannel: reportChannel, drinkChannel: drinkChannel, foodChannel: foodChannel)
+    func updateConfig(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?, foodManager: User?, drinkManager: User?) {
+        configStore.update(token: token, reportChannel: reportChannel, drinkChannel: drinkChannel, foodChannel: foodChannel, foodManager: foodManager, drinkManager: drinkManager)
     }
-
 
     func post(channel: String, text: String) -> Single<Void>? {
         guard let token = configStore.fetch().token else { return nil }

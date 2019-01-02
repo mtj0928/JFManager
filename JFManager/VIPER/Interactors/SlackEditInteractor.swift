@@ -20,7 +20,8 @@ class SlackEditInteractor: SlackEditInteractorProtocol {
         config = BehaviorRelay(value: useCase.fetchConfig())
     }
 
-    func save(token: String?, reportChannel: String?, drinkChanne: String?, foodChannel: String?) {
-        useCase.updateConfig(token: token, reportChannel: reportChannel, drinkChannel: drinkChanne, foodChannel: foodChannel)
+    func save(token: String?, reportChannel: String?, drinkChannel: String?, foodChannel: String?) {
+        let config = self.config.value
+        useCase.updateConfig(token: token, reportChannel: reportChannel, drinkChannel: drinkChannel, foodChannel: foodChannel, foodManager: config.foodManager, drinkManager: config.drinkManager)
     }
 }

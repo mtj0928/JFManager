@@ -17,7 +17,7 @@ class LocalRealmRepository: RealmRepository {
 
     func build() -> Realm {
         let config = Realm.Configuration(
-            schemaVersion: 2,
+            schemaVersion: 3,
             migrationBlock: { _, _ in }
         )
 

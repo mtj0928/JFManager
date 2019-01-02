@@ -31,7 +31,7 @@ class SlackEditPresenter: SlackEditPresenterProtocol {
     }
 
     func save() {
-        interactor.save(token: token.value, reportChannel: reportChannel.value, drinkChanne: drinkChannel.value, foodChannel: foodChannel.value)
+        interactor.save(token: token.value, reportChannel: reportChannel.value, drinkChannel: drinkChannel.value, foodChannel: foodChannel.value)
         router.finish()
     }
 

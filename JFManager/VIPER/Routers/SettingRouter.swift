@@ -26,8 +26,14 @@ class SettingRouter: SettingRouterProtocol {
         let viewController = SlackEditViewBuilder.buildDefault(navigationController)
         navigationController?.pushViewController(viewController, animated: true)
     }
+
     func presentProductList(genre: Genre) {
         let viewController = ProductManageViewBuilder.buildDfault(genre: genre, navigationController: navigationController)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func presentManager(genre: Genre) {
+        let viewController = ManagerViewBuilder.buildeDefault(of: genre)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
