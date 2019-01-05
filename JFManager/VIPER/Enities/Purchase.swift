@@ -18,6 +18,22 @@ class Purchase: Object {
     @objc dynamic var isCanceld = false
     let user = LinkingObjects(fromType: User.self, property: "history")
 
+    func shouldBeLiquidate() -> Bool {
+        // 清算されていない && 取り消されていない
+        return !isLiquidated && !isCanceld
+    }
+
+    func shouldBeLiquidate(genre: Genre) -> Bool {
+        guard let product = product else {
+            return false
+        }
+        // 指定したジャンル
+        guard product.genre == genre else {
+            return false
+        }
+        // 清算されていない && 取り消されていない
+        return !isLiquidated && !isCanceld
+    }
 
     override class func primaryKey() -> String? {
         return "id"

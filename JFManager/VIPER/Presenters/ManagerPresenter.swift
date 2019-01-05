@@ -31,18 +31,21 @@ class ManagerPresenter: ManagerPresenterProtocol {
     }
 
     func sendReport() {
-        _ = interactor.sendReport()?.subscribe(onSuccess: {_ in
-            // 何らかしらの更新処理
+        let text = SlackMessageGenerator.generate(users: users.value, genre: genre.value, managerName: managerUser.value?.name ?? "未設定")
+        _ = interactor.sendReport(text: text)?.subscribe(onSuccess: {[weak self] _ in
+            DispatchQueue.main.async {
+                self?.interactor.updatePrice()
+            }
             }, onError: { _ in
-                // 何かしらのエラー処理
+                 // TODO: 何かしらのエラー処理
         })
     }
 
     func sendCSV() {
         _ = interactor.sendCSV()?.subscribe(onSuccess: { _ in
-            // 何らかしらの更新処理
+            // TODO: 何らかしらの更新処理
             }, onError: { _ in
-                // 何かしらのエラー処理
+                // TODO: 何かしらのエラー処理
         })
     }
 

@@ -45,11 +45,11 @@ class UserPageInteractor: UserPageInteractorProtocol {
         historyNotification?.invalidate()
         historyResults = user.value.history.sorted(byKeyPath: "date", ascending: false)
 
-        history.accept(historyResults.map({ $0 }))
+        history.accept(historyResults.filter({ $0.shouldBeLiquidate() }).map({ $0 }))
 
         historyNotification = historyResults.observe { [weak self] _ in
             guard let `self` = self else { return }
-            self.history.accept(self.historyResults.map({ $0 }))
+            self.history.accept(self.historyResults.filter({ $0.shouldBeLiquidate() }).map({ $0 }))
         }
     }
 

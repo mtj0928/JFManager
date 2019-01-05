@@ -28,8 +28,9 @@ protocol ManagerInteractorProtocol {
     var users: BehaviorRelay<[User]> { get }
 
     func sendCSV() -> Single<Void>?
-    func sendReport() -> Single<Void>?
+    func sendReport(text: String) -> Single<Void>?
     func changeManager(user: User)
+    func updatePrice()
 }
 
 protocol ManagerRouterProtocol {

@@ -36,6 +36,7 @@ extension ManagerViewController {
 
         tableView.registerCell(identifier: ToatalPriceTableViewCell.identifier)
         tableView.registerCell(identifier: ManagerTableViewCell.identifier)
+        tableView.registerCell(identifier: SlackSendButtonCell.identifier)
     }
 
     private func subscribe() {
@@ -70,6 +71,12 @@ extension ManagerViewController: UITableViewDataSource {
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ManagerTableViewCell.identifier, for: indexPath) as! ManagerTableViewCell
             cell.set(genre: presenter.genre.value, user: presenter.managerUser.value)
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SlackSendButtonCell.identifier, for: indexPath) as! SlackSendButtonCell
+            cell.sendButton.rx.tap.subscribe(onNext: { [weak self] _ in
+                self?.presenter.sendReport()
+            }).disposed(by: cell.disposeBag)
             return cell
         }
         let cell = UITableViewCell()

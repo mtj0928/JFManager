@@ -23,10 +23,12 @@ class ManagerInteractor: ManagerInteractorProtocol {
     private let purchases: Results<Purchase>
     private let slackUseCase: SlackUseCase
     private let userUseCase: UserUseCase
+    private let purchaseStore: PurchaseStore
     private var notifications: [NotificationToken] = []
 
     init(genre: Genre, purchaseStore: PurchaseStore, userUseCase: UserUseCase, slackUseCase: SlackUseCase) {
         self.genre = BehaviorRelay(value: genre)
+        self.purchaseStore = purchaseStore
         self.slackUseCase = slackUseCase
         self.userUseCase = userUseCase
 
@@ -76,9 +78,9 @@ class ManagerInteractor: ManagerInteractorProtocol {
         return slackUseCase.post(channel: channel, text: "")
     }
 
-    func sendReport() -> Single<Void>? {
+    func sendReport(text: String) -> Single<Void>? {
         guard let channel = slackUseCase.fetchConfig().reportChannel else { return nil }
-        return slackUseCase.post(channel: channel, text: "")
+        return slackUseCase.post(channel: channel, text: text)
     }
 
     func changeManager(user: User) {
@@ -88,6 +90,12 @@ class ManagerInteractor: ManagerInteractorProtocol {
             slackUseCase.updateConfig(token: config.token, reportChannel: config.reportChannel, drinkChannel: config.drinkChannel, foodChannel: config.foodChannel, foodManager: config.foodManager, drinkManager: user)
         case .food:
             slackUseCase.updateConfig(token: config.token, reportChannel: config.reportChannel, drinkChannel: config.drinkChannel, foodChannel: config.foodChannel, foodManager: user, drinkManager: config.drinkManager)
+        }
+    }
+
+    func updatePrice() {
+        users.value.forEach { user in
+            purchaseStore.liquidate(in: user, for: genre.value)
         }
     }
 }

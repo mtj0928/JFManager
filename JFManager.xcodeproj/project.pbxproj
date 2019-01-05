@@ -103,6 +103,9 @@
 		90EA012B21DC767700D5DA5C /* ToatalPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA012A21DC767700D5DA5C /* ToatalPriceTableViewCell.xib */; };
 		90EA012D21DCFA9700D5DA5C /* SelectManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA012C21DCFA9700D5DA5C /* SelectManagerViewController.swift */; };
 		90EA012F21DCFAC200D5DA5C /* SelectManagerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EA012E21DCFAC200D5DA5C /* SelectManagerViewController.storyboard */; };
+		90EA013321DEDFA300D5DA5C /* SlackSendButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA013221DEDFA300D5DA5C /* SlackSendButtonCell.swift */; };
+		90EA013521DEDFBA00D5DA5C /* SlackSendButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90EA013421DEDFBA00D5DA5C /* SlackSendButtonCell.xib */; };
+		90EA013821E0429200D5DA5C /* SlackMessageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA013721E0429200D5DA5C /* SlackMessageGenerator.swift */; };
 		90EDB49D21B2DEA9004C15CC /* UserManagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */; };
 		90EDB4A121B36FB8004C15CC /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */; };
 		90EDB4A321B36FC9004C15CC /* UserEditViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */; };
@@ -228,6 +231,9 @@
 		90EA012A21DC767700D5DA5C /* ToatalPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToatalPriceTableViewCell.xib; sourceTree = "<group>"; };
 		90EA012C21DCFA9700D5DA5C /* SelectManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectManagerViewController.swift; sourceTree = "<group>"; };
 		90EA012E21DCFAC200D5DA5C /* SelectManagerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectManagerViewController.storyboard; sourceTree = "<group>"; };
+		90EA013221DEDFA300D5DA5C /* SlackSendButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSendButtonCell.swift; sourceTree = "<group>"; };
+		90EA013421DEDFBA00D5DA5C /* SlackSendButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlackSendButtonCell.xib; sourceTree = "<group>"; };
+		90EA013721E0429200D5DA5C /* SlackMessageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackMessageGenerator.swift; sourceTree = "<group>"; };
 		90EDB49C21B2DEA9004C15CC /* UserManagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagePresenter.swift; sourceTree = "<group>"; };
 		90EDB4A021B36FB8004C15CC /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		90EDB4A221B36FC9004C15CC /* UserEditViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserEditViewController.storyboard; sourceTree = "<group>"; };
@@ -329,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				907BC9C421B22F59002C3A85 /* Extensions */,
+				90EA013621E0427B00D5DA5C /* Util */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -352,8 +359,6 @@
 			children = (
 				90568EAF21C53D98002727A0 /* ManagerViewController.storyboard */,
 				90568EAD21C53D7F002727A0 /* ManagerViewController.swift */,
-				90EA012C21DCFA9700D5DA5C /* SelectManagerViewController.swift */,
-				90EA012E21DCFAC200D5DA5C /* SelectManagerViewController.storyboard */,
 				907BC9C621B22FF5002C3A85 /* MasterViewController.storyboard */,
 				907BC99E21B228F3002C3A85 /* MasterViewController.swift */,
 				9003F10F21B3E18C0009EEBD /* ProductEditViewController.storyboard */,
@@ -362,6 +367,8 @@
 				90EDB4B921B3BC3C004C15CC /* ProductManageViewController.swift */,
 				9077C41321B4AB9A003EEB03 /* PurchaseConfirmViewController.storyboard */,
 				9077C41121B4AB77003EEB03 /* PurchaseConfirmViewController.swift */,
+				90EA012E21DCFAC200D5DA5C /* SelectManagerViewController.storyboard */,
+				90EA012C21DCFA9700D5DA5C /* SelectManagerViewController.swift */,
 				907BC9F721B2727A002C3A85 /* SettingViewController.storyboard */,
 				907BC9F521B27267002C3A85 /* SettingViewController.swift */,
 				9077C43D21B7BADA003EEB03 /* SlackEditViewController.storyboard */,
@@ -529,6 +536,14 @@
 			path = UserCase;
 			sourceTree = "<group>";
 		};
+		90EA013621E0427B00D5DA5C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				90EA013721E0429200D5DA5C /* SlackMessageGenerator.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		90EDB4B021B3AFB5004C15CC /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,16 +560,18 @@
 				9077C42121B4C790003EEB03 /* HeaderTableViewCell.xib */,
 				9077C42321B4C965003EEB03 /* HistoryTableViewCell.swift */,
 				9077C42521B4C978003EEB03 /* HistoryTableViewCell.xib */,
+				905BC5AB21C657E700EBE5D6 /* ManagerTableViewCell.swift */,
+				905BC5AD21C657F900EBE5D6 /* ManagerTableViewCell.xib */,
 				9003F13321B436530009EEBD /* ProductsTableViewCell.swift */,
 				9003F13521B4366B0009EEBD /* ProductsTableViewCell.xib */,
+				90EA013221DEDFA300D5DA5C /* SlackSendButtonCell.swift */,
+				90EA013421DEDFBA00D5DA5C /* SlackSendButtonCell.xib */,
+				905BC5AF21C65B8400EBE5D6 /* ToatalPriceTableViewCell.swift */,
+				90EA012A21DC767700D5DA5C /* ToatalPriceTableViewCell.xib */,
 				9003F12321B41A2B0009EEBD /* UserProfileTableViewCell.swift */,
 				9003F12521B41A340009EEBD /* UserProfileTableViewCell.xib */,
 				90EDB4B121B3AFC6004C15CC /* UserShortCell.swift */,
 				90EDB4B321B3AFDF004C15CC /* UserShortCell.xib */,
-				905BC5AF21C65B8400EBE5D6 /* ToatalPriceTableViewCell.swift */,
-				90EA012A21DC767700D5DA5C /* ToatalPriceTableViewCell.xib */,
-				905BC5AB21C657E700EBE5D6 /* ManagerTableViewCell.swift */,
-				905BC5AD21C657F900EBE5D6 /* ManagerTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -641,6 +658,7 @@
 				9077C41421B4AB9A003EEB03 /* PurchaseConfirmViewController.storyboard in Resources */,
 				90EA012B21DC767700D5DA5C /* ToatalPriceTableViewCell.xib in Resources */,
 				90EA012F21DCFAC200D5DA5C /* SelectManagerViewController.storyboard in Resources */,
+				90EA013521DEDFBA00D5DA5C /* SlackSendButtonCell.xib in Resources */,
 				9077C43E21B7BADA003EEB03 /* SlackEditViewController.storyboard in Resources */,
 				905BC5AE21C657F900EBE5D6 /* ManagerTableViewCell.xib in Resources */,
 				9003F11021B3E18C0009EEBD /* ProductEditViewController.storyboard in Resources */,
@@ -722,6 +740,7 @@
 				90568EA821C4FD50002727A0 /* ManagerInteractor.swift in Sources */,
 				907BCA0921B2D5E1002C3A85 /* SettingBuilder.swift in Sources */,
 				9003F10E21B3E17C0009EEBD /* ProductEditViewController.swift in Sources */,
+				90EA013321DEDFA300D5DA5C /* SlackSendButtonCell.swift in Sources */,
 				9003F11A21B3EDF40009EEBD /* ProductEditRouter.swift in Sources */,
 				907BC9D721B2508F002C3A85 /* UserStore.swift in Sources */,
 				90EDB4AD21B37FDD004C15CC /* UserEditRouter.swift in Sources */,
@@ -766,6 +785,7 @@
 				9077C43C21B7BAC2003EEB03 /* SlackEditViewController.swift in Sources */,
 				9077C42021B4C77A003EEB03 /* HeaderTableViewCell.swift in Sources */,
 				9003F13021B431DA0009EEBD /* UserPageViewBuilder.swift in Sources */,
+				90EA013821E0429200D5DA5C /* SlackMessageGenerator.swift in Sources */,
 				908080EB21B906F100C98626 /* ManagerRouter.swift in Sources */,
 				9003F12A21B422530009EEBD /* UserPageInteractor.swift in Sources */,
 				9077C42E21B7576F003EEB03 /* SlackStore.swift in Sources */,

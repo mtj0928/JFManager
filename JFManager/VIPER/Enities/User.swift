@@ -40,8 +40,14 @@ class User: Object {
 extension User {
 
     private func setImage(value: UIImage?) {
+        var image = value
+        var data = image?.pngData()
+        while (data?.count ?? 0) > 1 * 1024 * 1024 {
+            image = image?.resized(withPercentage: 0.5)
+            data = image?.pngData()
+        }
         imageCache = value
-        imageData = value?.pngData()
+        imageData = data
     }
 
     private func getImage() -> UIImage? {
