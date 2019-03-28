@@ -35,7 +35,7 @@ class SlackMessageGenerator {
         \(String(describing: components.month!))月分の\(getPriceName(genre: genre))代金は以下のようになっております．\n\n
         """
         text = results.reduce(text) { (text, result) -> String in
-            return text + "\(result.name)\t\t￥\(result.price)\n"
+            return text + "\(result.name)様\t\t￥\(result.price)\n"
         }
         text += """
 
