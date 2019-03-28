@@ -63,6 +63,7 @@ class UserEditPresenter: UserEditPresenterProtocol {
         } else if let position = selectedPositionName.value {
             interactor.createUser(name: name.value, position: position, image: image.value)
         }
+        router.dismiss()
     }
 
     private func update(_ user: User) {
@@ -71,5 +72,14 @@ class UserEditPresenter: UserEditPresenterProtocol {
         } else if let position = selectedPositionName.value {
             interactor.update(user, name: name.value, position: position, image: image.value)
         }
+        router.dismiss()
+    }
+
+    func deleteUser() {
+        guard let user = self.user else {
+            return
+        }
+        interactor.delete(user)
+        router.dismiss()
     }
 }

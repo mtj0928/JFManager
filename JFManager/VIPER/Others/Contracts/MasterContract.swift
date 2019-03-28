@@ -11,24 +11,20 @@ import RxSwift
 import RxCocoa
 
 protocol MasterPresenterProtocol {
-
     var users: BehaviorRelay<[Position: [User]]> { get }
     var positions: BehaviorRelay<[Position]> { get }
     var update: Observable<Void> { get }
-
 
     func show(user: User)
     func showSetting()
 }
 
 protocol MasterInteractorProtocol {
-
     var users: BehaviorRelay<[User]> { get }
     var positions: BehaviorRelay<[Position]> { get }
 }
 
 protocol MasterRouterProtocol {
-
     func show(user: User)
     func showSetting()
 }

@@ -43,4 +43,8 @@ class UserEditInteractor: UserEditInteractorProtocol {
         let position = positionStore.create(name: positionText)
         _ = userStore.update(user: user, name: name, position: position, image: image)
     }
+
+    func delete(_ user: User) {
+        userStore.delete(user: user)
+    }
 }

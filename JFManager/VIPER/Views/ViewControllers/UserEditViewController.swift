@@ -61,7 +61,8 @@ extension UserEditViewController {
 
     private func setUpNavigationBar() {
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cencel))
-        navigationItem.leftBarButtonItem = cancelButton
+        let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.deleteUser))
+        navigationItem.leftBarButtonItems = [cancelButton, deleteButton]
 
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.save))
         navigationItem.rightBarButtonItem = saveButton
@@ -73,7 +74,10 @@ extension UserEditViewController {
 
     @objc private func save() {
         presenter.saveUser()
-        navigationController?.dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func deleteUser() {
+        presenter.deleteUser()
     }
 
     private func setUpPicker() {

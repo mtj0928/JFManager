@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 
 protocol UserEditPresenterProtocol {
-
     var name: BehaviorRelay<String> { get }
     var selectedPositionName: BehaviorRelay<String?> { get }
     var image: BehaviorRelay<UIImage?> { get }
@@ -20,17 +19,17 @@ protocol UserEditPresenterProtocol {
 
     func selectPosition(at index: Int?) 
     func saveUser()
+    func deleteUser()
 }
 
 protocol UserEditInteractorProtocol {
-
     var positions: BehaviorRelay<[Position]> { get }
 
     func createUser(name: String, position: Position ,image: UIImage?)
     func createUser(name: String, position: String ,image: UIImage?)
-
     func update(_ user: User, name: String, position: Position, image: UIImage?)
     func update(_ user: User, name: String, position: String, image: UIImage?)
+    func delete(_ user: User)
 }
 
 protocol UserEditRouterProtocol {
